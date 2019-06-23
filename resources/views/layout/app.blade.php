@@ -516,9 +516,9 @@ rel="stylesheet"  type="text/css" href="files/media/css/dataTables.bootstrap4.cs
             style="text-align:center">
             <span class="float-md-left d-xs-block d-md-inline-block">Copyright &copy; 2019
                 <a
-                    href="https://themeforest.net/user/pixinvent/portfolio?ref=pixinvent"
+                    href="https://www.codeforiraq.org"
                     target="_blank"
-                    class="text-bold-800 grey darken-2">Al-Sadeem CO.
+                    class="text-bold-800 grey darken-2">Code For Iraq
                 </a>, All rights reserved.
             </span>
         </p>
