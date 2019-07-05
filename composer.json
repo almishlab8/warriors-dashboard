@@ -11,8 +11,12 @@
         "php": "^7.1.3",
         "fideloper/proxy": "^4.0",
         "laravel/framework": "5.8.*",
+<<<<<<< HEAD
         "laravel/tinker": "^1.0",
         "laravelcollective/html": "^5.8"
+=======
+        "laravel/tinker": "^1.0"
+>>>>>>> 5961acb534085936c3e453821cab3b301bbb71be
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",

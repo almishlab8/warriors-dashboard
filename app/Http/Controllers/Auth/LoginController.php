@@ -1,13 +1,20 @@
 <?php
 
 namespace App\Http\Controllers\Auth;
+<<<<<<< HEAD
 use Auth;
+=======
+
+>>>>>>> 5961acb534085936c3e453821cab3b301bbb71be
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class LoginController extends Controller
 {
+<<<<<<< HEAD
     
+=======
+>>>>>>> 5961acb534085936c3e453821cab3b301bbb71be
     /*
     |--------------------------------------------------------------------------
     | Login Controller
@@ -28,7 +35,10 @@ class LoginController extends Controller
      */
     protected $redirectTo = '/home';
 
+<<<<<<< HEAD
     
+=======
+>>>>>>> 5961acb534085936c3e453821cab3b301bbb71be
     /**
      * Create a new controller instance.
      *
