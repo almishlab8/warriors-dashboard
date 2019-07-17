@@ -1,17 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-<<<<<<< HEAD
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
-        "This file is @generated automatically"
-    ],
-    "content-hash": "398ca4cfb8dcb96dc3a81a806e3567de",
-=======
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "94d4bf9ac7f4a933030e46a346ee2917",
->>>>>>> 5961acb534085936c3e453821cab3b301bbb71be
+    "content-hash": "398ca4cfb8dcb96dc3a81a806e3567de",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -683,7 +676,6 @@
             "time": "2018-10-12T19:39:35+00:00"
         },
         {
-<<<<<<< HEAD
             "name": "laravelcollective/html",
             "version": "v5.8.0",
             "source": {
@@ -752,8 +744,6 @@
             "time": "2019-03-01T22:53:41+00:00"
         },
         {
-=======
->>>>>>> 5961acb534085936c3e453821cab3b301bbb71be
             "name": "league/flysystem",
             "version": "1.0.52",
             "source": {

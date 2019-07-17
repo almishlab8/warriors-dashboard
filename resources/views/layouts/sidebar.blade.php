@@ -16,14 +16,19 @@
                 class="navigation navigation-main">
                 <li class=" nav-item">
                     <a href="index.html">
-                        <i class="icon-home3"></i>
+                        <i class="icon-newspaper"></i>
                         <span data-i18n="nav.dash.main" class="menu-title">الاخبار
                         </span>
                     </a>
                     <ul class="menu-content">
-                        <li class="active">
+                        <li class="">
                             <a href="#" data-i18n="nav.dash.main" class="menu-item">
-                                <i class="icon-home3"></i>اضافة 
+                                <i class="icon-cast"></i>عرض 
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="#" data-i18n="nav.dash.main" class="menu-item">
+                                <i class="icon-plus"></i>اضافة 
                             </a>
                         </li>
                         
@@ -36,16 +41,19 @@
             @can('isSuperAdmin')
             <li class=" nav-item">
                 <a href="#">
-                    <i class="icon-users"></i>
+                    <i class="icon-user-tie"></i>
                     <span data-i18n="nav.page_layouts.main" class="menu-title">المدير
                     </span>
                 </a>
                 <ul class="menu-content">
 
                     <li class=" nav-item">
+                    <a href="#" data-i18n="nav.dash.main" class="menu-item">
+                                <i class="icon-cast"></i>عرض 
+                            </a>
                         <a href="users">
         
-                            <span data-i18n="nav.menu_levels.main" class="menu-title"> <i class="icon-calendar4"></i> اضافة </span></a>
+                            <span data-i18n="nav.menu_levels.main" class="menu-title"> <i class="icon-plus"></i> اضافة </span></a>
                         
                     </li>
             
@@ -58,16 +66,16 @@
 
             <li class=" nav-item">
                 <a href="#">
-                    <i class="icon-stack-2"></i>
-                    <span data-i18n="nav.page_layouts.main" class="menu-title">الطالب
+                    <i class="icon-users2"></i>
+                    <span data-i18n="nav.page_layouts.main" class="menu-title">الطلاب
                     </span>
                 </a>
                 <ul class="menu-content">
 
                     <li class=" nav-item">
-                        <a href="#">
-        
-                            <span data-i18n="nav.menu_levels.main" class="menu-title"> <i class="icon-calendar4"></i> اضافة </span></a>
+                        <a href="#"><span data-i18n="nav.menu_levels.main" class="menu-title"> <i class="icon-cast"></i> عرض كل الطلاب </span></a>
+                        <a href="#"><span data-i18n="nav.menu_levels.main" class="menu-title"> <i class="icon-user-plus"></i> اضافة طالب جديد </span></a>
+                        <a href="#"><span data-i18n="nav.menu_levels.main" class="menu-title"> <i class="icon-plus"></i>  اضافة طالب الى صف </span></a>
                         
                     </li>
             
@@ -75,16 +83,19 @@
             </li>
             <li class=" nav-item">
                 <a href="#">
-                    <i class="icon-briefcase4"></i>
+                    <i class="icon-user"></i>
                     <span data-i18n="nav.project.main" class="menu-title">الاساتذة
                     </span>
                 </a>
                 <ul class="menu-content">
                     <li>
+                    <a href="#" data-i18n="nav.dash.main" class="menu-item">
+                                <i class="icon-cast"></i>عرض 
+                            </a>
                         <a
                             href="#"
                             data-i18n="nav.invoice.invoice_template"
-                            class="menu-item"> <i class="icon-newspaper-o"></i> اضافة
+                            class="menu-item"> <i class="icon-plus"></i> اضافة
                         </a>
                     </li>
                 </ul>
@@ -92,7 +103,7 @@
             <li class=" nav-item">
                 <a href="#">
                     <i class="icon-ios-albums-outline"></i>
-                    <span data-i18n="nav.cards.main" class="menu-title">التبلغات 
+                    <span data-i18n="nav.cards.main" class="menu-title">الوسائط 
                     </span>
                 </a>
                 <ul class="menu-content">
@@ -100,42 +111,67 @@
                         <a
                             href="#"
                             data-i18n="nav.cards.card_bootstrap"
-                            class="menu-item"> <i class="icon-book2"></i> الرسائل
+                            class="menu-item"> <i class="icon-images2"></i> معرض الصور
                         </a>
                     </li>
                     <li>
                         <a
                             href="#"
                             data-i18n="nav.cards.card_actions"
-                            class="menu-item"> <i class="icon-volume-up"></i>الفيديو
+                            class="menu-item"> <i class="icon-film"></i>الفيديو
                         </a>
                     </li>
                 </ul>
             </li>
             <li class=" nav-item">
                 <a href="#">
-                    <i class="icon-whatshot"></i>
+                    <i class="icon-bubbles3"></i>
                     <span data-i18n="nav.advance_cards.main" class="menu-title">
-                        معرض الصور
+                        الرسائل
                     </span>
                 </a>
-                <ul class="menu-content">
-                    
-                </ul>
+ 
             </li>
             <li class=" nav-item">
                 <a href="#">
-                    <i class="icon-compass3"></i>
+                    <i class="icon-bullhorn"></i>
+                    <span data-i18n="nav.advance_cards.main" class="menu-title">
+                        التبليغات
+                    </span>
+                </a>
+ 
+            </li>
+            <li class=" nav-item">
+                <a href="#">
+                    <i class="icon-books"></i>
+                    <span data-i18n="nav.advance_cards.main" class="menu-title">
+                        الواجبات
+                    </span>
+                </a>
+ 
+            </li>
+            <li class=" nav-item">
+                <a href="#">
+                    <i class="icon-table"></i>
                     <span data-i18n="nav.content.main" class="menu-title">
-                        الدعم الفني
+                        الجدول الاسبوعي
                     </span>
                 </a>
 
             </li>
             <li class=" nav-item">
                 <a href="#">
-                    <i class="icon-grid2"></i>
-                    <span data-i18n="nav.components.main" class="menu-title">التعليمات
+                    <i class="icon-clipboard2"></i>
+                    <span data-i18n="nav.content.main" class="menu-title">
+                       تقييم الطلبة
+                    </span>
+                </a>
+
+            </li>
+            <li class=" nav-item">
+                <a href="#">
+                    <i class="icon-user-check"></i>
+                    <span data-i18n="nav.components.main" class="menu-title">الحظور والغياب
                     </span>
                 </a>
 

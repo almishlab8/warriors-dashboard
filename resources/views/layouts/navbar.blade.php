@@ -45,31 +45,7 @@
                             </li>
                         </ul>
                         <ul class="nav navbar-nav float-xs-right">
-                            <li class="dropdown dropdown-language nav-item">
-                                <a
-                                    id="dropdown-flag"
-                                    href="#"
-                                    data-toggle="dropdown"
-                                    aria-haspopup="true"
-                                    aria-expanded="false"
-                                    class="dropdown-toggle nav-link">
-                                    <i class="flag-icon flag-icon-gb"></i>
-                                    <span class="selected-language">English</span></a>
-                                <div aria-labelledby="dropdown-flag" class="dropdown-menu">
-                                    <a href="#" class="dropdown-item">
-                                        <i class="flag-icon flag-icon-gb"></i>
-                                        English</a>
-                                    <a href="#" class="dropdown-item">
-                                        <i class="flag-icon flag-icon-fr"></i>
-                                        French</a>
-                                    <a href="#" class="dropdown-item">
-                                        <i class="flag-icon flag-icon-cn"></i>
-                                        Chinese</a>
-                                    <a href="#" class="dropdown-item">
-                                        <i class="flag-icon flag-icon-de"></i>
-                                        German</a>
-                                </div>
-                            </li>
+
                             <li class="dropdown dropdown-notification nav-item">
                                 <a href="#" data-toggle="dropdown" class="nav-link nav-link-label">
                                     <i class="ficon icon-bell4"></i>
