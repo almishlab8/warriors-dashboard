@@ -55,7 +55,7 @@ Route::get('classes/showclasses', 'ClassesContrroller@index')->name('classes.sho
 //classes deleted
 Route::get('classes/destroy/{id}', 'ClassesContrroller@destroy')->name('classes.destroy');
 
-//
+//add class
 Route::get('classes/addclass/', 'ClassesContrroller@create')->name('classes.addclass');
 Route::post('classes/store', 'ClassesContrroller@store')->name('classes.store');
 
