@@ -19,6 +19,9 @@
 
         <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/droid-arabic-kufi" type="text/css"/>
         <link rel="stylesheet" href="{{url('css/frontend.css')}}" type="text/css"/>
+        <link rel="stylesheet" href="{{url('css/students.css')}}" type="text/css"/>
+        <link rel="stylesheet" href="{{asset('https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css')}}">
+        <script src="{{asset('https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js')}}"></script>
         <link
             rel="apple-touch-icon"
             sizes="60x60"
@@ -46,7 +49,7 @@
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-touch-fullscreen" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    
+
 
         <!-- DataTables CSS -->
 <!-- DataTables JS -->
@@ -99,11 +102,11 @@ rel="stylesheet"  type="text/css" href="files/media/css/dataTables.bootstrap4.cs
             href="{{asset('/files/assets/css/style-rtl.css')}}">
             <style>
                 *{
-                    
-                        font-family: 'DroidArabicKufiRegular'; 
-                        font-weight: normal; 
-                        font-style: normal; 
-                     
+
+                        font-family: 'DroidArabicKufiRegular';
+                        font-weight: normal;
+                        font-style: normal;
+
                 }
             </style>
     </head>
@@ -131,18 +134,18 @@ rel="stylesheet"  type="text/css" href="files/media/css/dataTables.bootstrap4.cs
     ////////////////////////////////////////////////////////////////////////////-->
 
     <footer class="footer footer-static footer-light navbar-border">
-        <p
-            class="clearfix text-muted text-sm-center mb-0 px-2"
-            style="text-align:center">
-            <span class="float-md-left d-xs-block d-md-inline-block">Copyright &copy; 2019
-                <a
-                    href="https://www.codeforiraq.org"
-                    target="_blank"
-                    class="text-bold-800 grey darken-2">Code For Iraq
-                </a>, All rights reserved.
-            </span>
-        </p>
-    </footer>
+            <p
+                class="clearfix text-muted text-sm-center mb-0 px-2"
+                style="text-align:center">
+                <span class="float-md-left d-xs-block d-md-inline-block">Copyright &copy; 2019
+                    <a
+                        href="https://www.codeforiraq.org"
+                        target="_blank"
+                        class="text-bold-800 grey darken-2">Code For Iraq
+                    </a>, All rights reserved.
+                </span>
+            </p>
+        </footer>
 
     <!-- BEGIN VENDOR JS-->
     <script

@@ -23,20 +23,20 @@
                     <ul class="menu-content">
                         <li class="">
                             <a href="#" data-i18n="nav.dash.main" class="menu-item">
-                                <i class="icon-cast"></i>عرض 
+                                <i class="icon-cast"></i>عرض
                             </a>
                         </li>
                         <li class="">
                             <a href="#" data-i18n="nav.dash.main" class="menu-item">
-                                <i class="icon-plus"></i>اضافة 
+                                <i class="icon-plus"></i>اضافة
                             </a>
                         </li>
-                        
+
                 </ul>
             </li>
 
 
-            
+
 
             @can('isSuperAdmin')
             <li class=" nav-item">
@@ -49,14 +49,14 @@
 
                     <li class=" nav-item">
                     <a href="#" data-i18n="nav.dash.main" class="menu-item">
-                                <i class="icon-cast"></i>عرض 
+                                <i class="icon-cast"></i>عرض
                             </a>
                         <a href="users">
-        
+
                             <span data-i18n="nav.menu_levels.main" class="menu-title"> <i class="icon-plus"></i> اضافة </span></a>
-                        
+
                     </li>
-            
+
                 </ul>
             </li>
             @endcan
@@ -73,12 +73,11 @@
                 <ul class="menu-content">
 
                     <li class=" nav-item">
-                        <a href="#"><span data-i18n="nav.menu_levels.main" class="menu-title"> <i class="icon-cast"></i> عرض كل الطلاب </span></a>
-                        <a href="#"><span data-i18n="nav.menu_levels.main" class="menu-title"> <i class="icon-user-plus"></i> اضافة طالب جديد </span></a>
-                        <a href="#"><span data-i18n="nav.menu_levels.main" class="menu-title"> <i class="icon-plus"></i>  اضافة طالب الى صف </span></a>
-                        
+                        <a href="{{route('students.all')}}"><span data-i18n="nav.menu_levels.main" class="menu-title"> <i class="icon-cast"></i> عرض كل الطلاب </span></a>
+                        <a href="{{route('students.allStudents')}}"><span data-i18n="nav.menu_levels.main" class="menu-title"> <i class="icon-user-plus"></i> اضافة طالب جديد </span></a>
+                        <a href="{{route ('students.merge') }}"><span data-i18n="nav.menu_levels.main" class="menu-title"> <i class="icon-plus"></i>  اضافة طالب الى صف </span></a>
                     </li>
-            
+
                 </ul>
             </li>
             <li class=" nav-item">
@@ -90,7 +89,7 @@
                 <ul class="menu-content">
                     <li>
                     <a href="#" data-i18n="nav.dash.main" class="menu-item">
-                                <i class="icon-cast"></i>عرض 
+                                <i class="icon-cast"></i>عرض
                             </a>
                         <a
                             href="#"
@@ -102,8 +101,27 @@
             </li>
             <li class=" nav-item">
                 <a href="#">
+                    <i class="icon-home"></i>
+                    <span data-i18n="nav.project.main" class="menu-title">الصفوف
+                    </span>
+                </a>
+                <ul class="menu-content">
+                    <li>
+                    <a href="{{route('classes.showclasses')}}" data-i18n="nav.dash.main" class="menu-item">
+                                <i class="icon-cast"></i> عرض الصفوف
+                            </a>
+                        <a
+                        href="{{route('classes.addclass')}}"
+                            data-i18n="nav.invoice.invoice_template"
+                            class="menu-item"> <i class="icon-plus"></i> اضافة صف
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class=" nav-item">
+                <a href="#">
                     <i class="icon-ios-albums-outline"></i>
-                    <span data-i18n="nav.cards.main" class="menu-title">الوسائط 
+                    <span data-i18n="nav.cards.main" class="menu-title">الوسائط
                     </span>
                 </a>
                 <ul class="menu-content">
@@ -130,7 +148,7 @@
                         الرسائل
                     </span>
                 </a>
- 
+
             </li>
             <li class=" nav-item">
                 <a href="#">
@@ -139,7 +157,7 @@
                         التبليغات
                     </span>
                 </a>
- 
+
             </li>
             <li class=" nav-item">
                 <a href="#">
@@ -148,7 +166,7 @@
                         الواجبات
                     </span>
                 </a>
- 
+
             </li>
             <li class=" nav-item">
                 <a href="#">
