@@ -20,7 +20,7 @@ Route::middleware('Admin')->group(function() {
     Route::resource('users', 'UsersController') ;
     Route::get('/users/admin/{id}', 'UsersController@admin')->name('users.admin');
     Route::get('/users/teacher/{id}', 'UsersController@teacher')->name('users.teacher');
-    Route::get('/users/notadmin/{id}', 'UsersController@notAdmin')->name('users.not.admin'); 
+    Route::get('/users/notadmin/{id}', 'UsersController@notAdmin')->name('users.not.admin');
 });
 
 
@@ -28,9 +28,13 @@ Route::middleware('AdminAndTeacher')->group(function() {
 
 Route::get('/user/profile', 'ProfilesController@index')->name('users.profile');
 Route::post('/user/profile/update', 'ProfilesController@update')->name('users.profile.update');
-Route::get('/user/profile/create', 'ProfilesController@create')->name('users.profile.create'); 
+Route::get('/user/profile/create', 'ProfilesController@create')->name('users.profile.create');
 Route::get('/', 'HomeController@index');
 Route::get('/home', 'HomeController@index');
+
+
+//Teachers Controller
+Route::resource('teachers' , 'TeachersController');
 });
 
 
