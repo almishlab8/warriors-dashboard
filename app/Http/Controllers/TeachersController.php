@@ -38,6 +38,7 @@ class TeachersController extends Controller
     public function store(Request $request)
     {
         $data = $this->validate($request , [
+            'name'                  => 'required|string',
             'gender'                => 'required|string',
             'qualifications'        => 'required|string',
             'address'               => 'required|string',
@@ -45,6 +46,15 @@ class TeachersController extends Controller
             'birthday'              => 'required|date',
             'teacher_documents'     => 'required|mimes:pdf',
             'teacher_certificate'   => 'required|mimes:pdf'
+        ], [] , [
+            'name'                  => 'اسم الاستاذ',
+            'gender'                => 'الجنس',
+            'qualifications'        => 'المؤهلات',
+            'address'               => 'عنوان السكن',
+            'phone_no'              => 'رقم الهاتف',
+            'birthday'              => 'تاريخ الميلاد',
+            'teacher_documents'     => 'وثائق الاستاذ',
+            'teacher_certificate'   => 'شهادات الاستاذ'
         ]);
 
         $data['USER_ID'] = auth()->user()->id;
@@ -76,8 +86,7 @@ class TeachersController extends Controller
 
         Teachers::create($data);
 
-        session()->flash('success');
-        return redirect('teachers');
+        return redirect()->back()->with('success' ,' ');
     }
 
     /**
@@ -114,6 +123,7 @@ class TeachersController extends Controller
     {
         $teacher = Teachers::findOrfail($id);
         $data = $this->validate($request , [
+            'name'                  => 'required|string',
             'gender'                => 'required|string',
             'qualifications'        => 'required|string',
             'address'               => 'required|string',
@@ -121,6 +131,15 @@ class TeachersController extends Controller
             'birthday'              => 'required|date',
             'teacher_documents'     => 'sometimes|mimes:pdf',
             'teacher_certificate'   => 'sometimes|mimes:pdf'
+        ], [] , [
+            'name'                  => 'اسم الاستاذ',
+            'gender'                => 'الجنس',
+            'qualifications'        => 'المؤهلات',
+            'address'               => 'عنوان السكن',
+            'phone_no'              => 'رقم الهاتف',
+            'birthday'              => 'تاريخ الميلاد',
+            'teacher_documents'     => 'وثائق الاستاذ',
+            'teacher_certificate'   => 'شهادات الاستاذ'
         ]);
         $data['USER_ID'] = auth()->user()->id;
 
@@ -172,9 +191,7 @@ class TeachersController extends Controller
 
         $teacher->update($data);
 
-
-        session()->flash('success');
-        return redirect('teachers');
+        return redirect()->back()->with('success' ,' ');
     }
 
     /**
@@ -196,7 +213,7 @@ class TeachersController extends Controller
             unlink('upload/graduationـcertificate/'.$teacher->teacher_certificate);
         }
         $teacher->delete();
-        session()->flash('success');
-        return redirect('teachers');
+        session()->flash('success' , 'تم الحذف بنجاح');
+        return redirect()->route('teachers.index');
     }
 }

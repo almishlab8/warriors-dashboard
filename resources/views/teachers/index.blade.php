@@ -10,23 +10,23 @@
   <a  href="/teachers/create" class="btn btn-success"><i class="ficon icon-plus"></i> آضافةاستاذ</a>
 </div>
 
-<table class="table table-striped">
+<table class="table table-striped table-responsive">
     <thead>
       <tr>
-        <th>Name</th>
-        <th>Birthday</th>
-        <th>phone_no</th>
-        <th>Address</th>
-        <th>Qualifications</th>
-        <th>Created_At</th>
-        <th>Edit</th>
-        <th>Delete</th>
+        <th>الاسم</th>
+        <th>تاريخ الميلاد</th>
+        <th>الهاتف</th>
+        <th>العنوان</th>
+        <th>المؤهلات</th>
+        <th>تاريخ الاضافة</th>
+        <th>التعديل</th>
+        <th>الحذف</th>
       </tr>
     </thead>
     <tbody>
         @foreach ($teachers as $teacher)
         <tr>
-        <td>{{$teacher->user->name}}</td>
+        <td>{{$teacher->name}}</td>
         <td>{{$teacher->birthday}}</td>
         <td>{{$teacher->phone_no}}</td>
         <td>{{$teacher->address}}</td>
