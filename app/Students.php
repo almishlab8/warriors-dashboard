@@ -24,7 +24,7 @@ class Students extends Model
 
  public function alerts()
  {
-  return $this->hasMany('App\Alerts' , );
+  return $this->hasMany('App\Alerts');
  }
 
 

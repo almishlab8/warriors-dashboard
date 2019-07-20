@@ -46,7 +46,7 @@
 
                         <div class="form-group">
                             <label for="qualifications">Qualifications</label>
-                            <input type="text" class="form-control" name="qualifications"  placeholder="Enter Qualifications">
+                            <input type="text" class="form-control" name="qualifications" value="{{ old('qualifications') }}"  placeholder="Enter Qualifications">
                         </div>
 
 
