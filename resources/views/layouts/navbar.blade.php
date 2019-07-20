@@ -14,9 +14,9 @@
                             <a href="index.html" class="navbar-brand nav-link">
                                 <img
                                     alt="branding logo"
-                                    src="./files/app-assets/images/logo/robust-logo-light.png"
-                                    data-expand="./files/app-assets/images/logo/robust-logo-light.png"
-                                    data-collapse="./files/app-assets/images/logo/robust-logo-small.png"
+                                    src="../files/app-assets/images/logo/robust-logo-light.png"
+                                    data-expand="../files/app-assets/images/logo/robust-logo-light.png"
+                                    data-collapse="../files/app-assets/images/logo/robust-logo-small.png"
                                     class="brand-logo">
                             </a>
                         </li>
@@ -208,7 +208,12 @@
                                     data-toggle="dropdown"
                                     class="dropdown-toggle nav-link dropdown-user-link">
                                     <span >
-                                            {{Auth::user()->name}}
+                                        @if (Auth::user() == null)
+
+                                            @else
+                                            {{Auth::user()->name }}
+                                        @endif
+
                                         <i></i>
                                     </span>
                                 </a>
@@ -216,8 +221,8 @@
                                     <a href="/user/profile" class="dropdown-item">
                                         <i class="icon-head"></i>
                                         Edit Profile</a>
-                                  
-                                   
+
+
                                     <div class="dropdown-divider"></div>
                                     <a href="{{ route('logout') }}"
                                     onclick="event.preventDefault();

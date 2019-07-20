@@ -1,0 +1,22 @@
+.from-1 {
+    background-color: white;
+    padding: 27px;
+    border-radius: 7px;
+    box-shadow: 3px -5px 22px -7px;
+}
+
+.alert.alert-dismissible.alert-success {
+    text-align: center;
+}
+.table-1 {
+    background-color: #1d2b36;
+    color: aliceblue;
+    border-radius: 7px;
+}
+.a {
+    text-decoration: none;
+    color: white;
+}
+.alert.alert-danger {
+    text-align: center;
+}

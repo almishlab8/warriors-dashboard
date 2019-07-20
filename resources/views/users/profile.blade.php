@@ -17,20 +17,20 @@
                                      {{$error}}
                                   </li>
                             @endforeach
-                            
+
                           </ul>
                           @endif
-                          
+
                           <form action="{{route('users.profile.update')}}" method="POST" enctype="multipart/form-data" >
                             {{ csrf_field()}}
-    
-                          
-    
+
+
+
                             <div class="form-group">
                               <label for="name">User</label>
                               <input type="text" class="form-control" name="name"  value="{{$user->name}}">
                              </div>
-                            
+
                              <div class="form-group">
                                     <label for="name">Email</label>
                                     <input type="email" class="form-control" name="email"  value="{{$user->email}}">
@@ -39,12 +39,12 @@
                                 <label for="password">(please put your password)</label>
                                 <input type="password" class="form-control" name="password"  >
                                 </div>
-    
-                           
-                           
+
+
+
                            @if ($user->profile)
-                           
-                           
+
+
 
                            <div class="form-group">
                             <label for="name">brithday</label>
@@ -62,7 +62,7 @@
                                      @elseif($user->profile->gender == 2)
                                      <option value="2">انثى</option>
                                      @endif
-                                  
+
                               </select>
                             </div>
 
@@ -117,13 +117,13 @@
                                       </div>
 
 
-                          
-                          
 
-                            
+
+
+
 
                            @else
-                               
+
 
                            <div class="form-group">
                             <label for="name">brithday</label>
@@ -172,11 +172,11 @@
                                   </div>
 
                            @endif
-                             
-                        
+
+
                             <button type="submit" class="btn btn-primary" style="text-align:center">Update</button>
-                          </form>  
-                         
+                          </form>
+
 
                 </div>
             </div>
