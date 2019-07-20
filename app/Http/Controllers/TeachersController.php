@@ -43,8 +43,8 @@ class TeachersController extends Controller
             'address'               => 'required|string',
             'phone_no'              => 'required|numeric',
             'birthday'              => 'required|date',
-            'teacher_documents'     => 'required',
-            'teacher_certificate'   => 'required'
+            'teacher_documents'     => 'required|mimes:pdf',
+            'teacher_certificate'   => 'required|mimes:pdf'
         ]);
 
         $data['USER_ID'] = auth()->user()->id;
@@ -119,8 +119,8 @@ class TeachersController extends Controller
             'address'               => 'required|string',
             'phone_no'              => 'required|numeric',
             'birthday'              => 'required|date',
-            'teacher_documents'     => 'sometimes',
-            'teacher_certificate'   => 'sometimes'
+            'teacher_documents'     => 'sometimes|mimes:pdf',
+            'teacher_certificate'   => 'sometimes|mimes:pdf'
         ]);
         $data['USER_ID'] = auth()->user()->id;
 
