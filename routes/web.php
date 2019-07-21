@@ -31,6 +31,10 @@ Route::post('/user/profile/update', 'ProfilesController@update')->name('users.pr
 Route::get('/user/profile/create', 'ProfilesController@create')->name('users.profile.create');
 Route::get('/', 'HomeController@index');
 Route::get('/home', 'HomeController@index');
+
+
+//Teachers Controller
+Route::resource('teachers' , 'TeachersController');
 });
 
 

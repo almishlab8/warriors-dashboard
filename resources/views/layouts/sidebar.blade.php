@@ -88,11 +88,11 @@
                 </a>
                 <ul class="menu-content">
                     <li>
-                    <a href="#" data-i18n="nav.dash.main" class="menu-item">
+                    <a href="{{route('teachers.index')}}" data-i18n="nav.dash.main" class="menu-item">
                                 <i class="icon-cast"></i>عرض
                             </a>
                         <a
-                            href="#"
+                            href="{{route('teachers.create')}}"
                             data-i18n="nav.invoice.invoice_template"
                             class="menu-item"> <i class="icon-plus"></i> اضافة
                         </a>

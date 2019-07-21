@@ -9,7 +9,11 @@
             <div class="form-group row">
           <label for="inputEmail3" class="col-sm-2 col-form-label">الأسم</label>
           <div class="col-sm-10">
+<<<<<<< HEAD
             <input type="text" name="name" value='{{ old("name") }}'  class="form-control" id="inputEmail3" placeholder="الأاسم">
+=======
+            <input type="text" name="name" value="{{ old('name') }}" class="form-control" id="inputEmail3" placeholder="الأاسم">
+>>>>>>> af94892bef7e9758bc38bd4fa205e7488146b83a
           </div>
         </div>
         <div class="form-group row">
