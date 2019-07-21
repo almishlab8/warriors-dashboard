@@ -9,7 +9,7 @@
             <div class="form-group row">
           <label for="inputEmail3" class="col-sm-2 col-form-label">أسم الصف</label>
           <div class="col-sm-10">
-            <input type="text" name="class_name" class="form-control" id="inputEmail3" placeholder="أسم الصف">
+          <input type="text" name="class_name" value="{{old('class_name')}}" class="form-control" id="inputEmail3" placeholder="أسم الصف">
           </div>
         </div>
 

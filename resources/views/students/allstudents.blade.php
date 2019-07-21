@@ -9,46 +9,47 @@
             <div class="form-group row">
           <label for="inputEmail3" class="col-sm-2 col-form-label">الأسم</label>
           <div class="col-sm-10">
-            <input type="text" name="name" class="form-control" id="inputEmail3" placeholder="الأاسم">
+            <input type="text" name="name" value='{{ old("name") }}'  class="form-control" id="inputEmail3" placeholder="الأاسم">
           </div>
         </div>
         <div class="form-group row">
                 <label for="inputEmail3" class="col-sm-2 col-form-label">تاريخ الميلاد</label>
                 <div class="col-sm-10">
-                  <input type="date" name="birthday"class="form-control" id="inputEmail3" placeholder="تاريخ الميلاد">
+                  <input type="date" value='{{ old("birthday") }}' name="birthday"class="form-control" id="inputEmail3" placeholder="تاريخ الميلاد">
                 </div>
          </div>
         <div class="form-group row">
           <label for="inputPassword3" class="col-sm-2 col-form-label">الجنس</label>
           <div class="col-sm-10">
-                <select class="form-control" name="gender"  >
+                <select class="form-control" name="gender"  value='{{ old("gender") }}' >
+                        <option    value=""></option>
                         <option    value="ذكر">ذكر</option>
-                        <option   value="انثى">انثى</option>
+                        <option    value="انثى">انثى</option>
                  </select>
           </div>
         </div>
         <div class="form-group row">
                 <label for="inputEmail3" class="col-sm-2 col-form-label">عنوان السكن</label>
                 <div class="col-sm-10">
-                  <input type="text" name="address"class="form-control" id="inputEmail3" placeholder="عنوان السكن">
+                  <input type="text" value='{{ old("address") }}' name="address"class="form-control" id="inputEmail3" placeholder="عنوان السكن">
                 </div>
          </div>
          <div class="form-group row">
                 <label for="inputEmail3" class="col-sm-2 col-form-label"> رقم الحالة</label>
                 <div class="col-sm-10">
-                  <input type="text" name="student_no"class="form-control" id="inputEmail3" placeholder="رقم الحالة">
+                  <input type="text" value='{{ old("student_no") }}' name="student_no"class="form-control" id="inputEmail3" placeholder="رقم الحالة">
                 </div>
          </div>
          <div class="form-group row">
                 <label for="inputEmail3" class="col-sm-2 col-form-label">رقم الهانف</label>
                 <div class="col-sm-10">
-                  <input type="text" name="phone_no"class="form-control" id="inputEmail3" placeholder="رقم الهاتف">
+                  <input type="text" value='{{ old("phone_no") }}' name="phone_no"class="form-control" id="inputEmail3" placeholder="رقم الهاتف">
                 </div>
          </div>
          <div class="form-group row">
                 <label for="inputEmail3" class="col-sm-2 col-form-label">مرفقات الطالب</label>
                 <div class="col-sm-10">
-                  <input type="File" name="student_documents"class="form-control" id="inputEmail3" >
+                  <input type="File"  value='{{ old("student_documents") }}' name="student_documents"class="form-control" id="inputEmail3" >
                 </div>
          </div>
         <div class="form-group row">

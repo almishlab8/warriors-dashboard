@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Students;
 use App\Classes;
+use DB;
 use Auth;
+use Illuminate\Support\Facades\Storage;
 
 class StudentsContrroller extends Controller
 {
@@ -16,7 +18,7 @@ class StudentsContrroller extends Controller
      */
     public function index()
     {
-        $all = Students::get();
+        $all = DB::table('students')->orderBy('updated_at', 'desc')->get();
         $class = Classes::get();
         return view ('students/all' , compact('all' , 'class'));
     }
@@ -28,25 +30,26 @@ class StudentsContrroller extends Controller
     {
         $students = new Students;
         $this->validate($request,[
-            'name' => 'required|string|max:255',
-            'birthday' => 'required',
-            'gender' => 'required',
-            'student_no' => 'required|string|max:255',
-            'address' => 'required|string|max:255',
-            'phone_no' => 'required|string|max:255',
+            'name'              => 'required|string|max:255',
+            'birthday'          => 'required',
+            'gender'            => 'required',
+            'student_no'        => 'required|string|max:255',
+            'address'           => 'required|string|max:255',
+            'phone_no'          => 'required|string|max:255',
             'student_documents' => 'mimes:pdf',
 
            ],
             [
-            'name.required' => 'الأسم مطلوب',
-            'birthday.required' => 'تاريخ الميلاد مطلوب',
-            'gender.required' => 'نوع الجنس مطلوب',
+            'name.required'       => 'الأسم مطلوب',
+            'birthday.required'   => 'تاريخ الميلاد مطلوب',
+            'gender.required'     => 'نوع الجنس مطلوب',
             'student_no.required' => 'الحالة الطالب  مطلوبة',
-            'address.required' => ' عنوان السكن  مطلوب',
-            'phone_no.required' => '  رقم الهاتف   مطلوب',
+            'address.required'    => ' عنوان السكن  مطلوب',
+            'phone_no.required'   => '  رقم الهاتف   مطلوب',
 
         ]);
       if($request->student_documents ){
+
         $picture = $request->student_documents;
         $student_documents_new =  time()  .  '.'  .  $request->student_documents->getClientOriginalExtension();
         $picture->move('upload/students/' , $student_documents_new);
@@ -72,7 +75,7 @@ class StudentsContrroller extends Controller
         $students->phone_no = $request->phone_no;
         $students->USERS_ID =  Auth::user()->id;
         $students->save();
-        return redirect()->back()->with('seuccs' ,' ');;
+        return redirect()->back()->with('seuccs' ,'  ');;
     }
     }
     public function edit($id)
@@ -101,7 +104,11 @@ class StudentsContrroller extends Controller
             'phone_no.required' => '  رقم الهاتف   مطلوب',
 
         ]);
+
        if ($request->student_documents) {
+
+
+
             $picture = $request->student_documents;
             $student_documents_new = time() .  '.'  . $request->student_documents->getClientOriginalExtension();
             $picture->move('upload/students/' , $student_documents_new);
@@ -116,7 +123,9 @@ class StudentsContrroller extends Controller
             $students->student_documents = ('/upload/students/'. $student_documents_new);
             $students->USERS_ID =  Auth::user()->id;
             $students->save();
+
         return redirect()->back()->with('seuccs' ,' ');
+
     }else {
             $students->name = $request->name;
             $students->birthday = $request->birthday;
@@ -158,5 +167,6 @@ class StudentsContrroller extends Controller
 
         return redirect()->back()->with('classs' , ' ');
     }
+
 
 }

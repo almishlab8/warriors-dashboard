@@ -20,8 +20,8 @@ class CreateStudentsTable extends Migration
             $table->string('student_no');
             $table->string('address', 255);
             $table->string('phone_no', 255);
-            $table->timestamp('birthday')->nullable();
-            $table->string('student_documents', 255)->default();
+            $table->string('birthday')->nullable();
+            $table->string('student_documents', 255)->nullable();
             $table->integer('USERS_ID');
             $table->integer('classes_ID')->default(0);
             $table->timestamps();

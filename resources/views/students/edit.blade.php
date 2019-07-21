@@ -15,15 +15,16 @@
         <div class="form-group row">
                 <label for="inputEmail3" class="col-sm-2 col-form-label">تاريخ الميلاد</label>
                 <div class="col-sm-10">
-                  <input  type="date" name="birthday" value="{{$edit->birthday}}" class="form-control" id="inputEmail3" placeholder="تاريخ الميلاد">
+                <input  type="date" value="{{old('birthday')}}" name="birthday" value="{{$edit->birthday }}" class="form-control" id="inputEmail3" placeholder="تاريخ الميلاد">
                 </div>
          </div>
         <div class="form-group row">
           <label for="inputPassword3" class="col-sm-2 col-form-label">الجنس</label>
           <div class="col-sm-10">
-                <select class="form-control" name="gender"   >
-                        <option    value="ذكر">ذكر</option>
-                        <option   value="انثى" >انثى</option>
+          <select class="form-control" name="gender"  >
+                <output></output>
+                <option  value="ذكر" {{$edit->gender  ===  'ذكر'  ? 'selected' : ' ' }}>ذكر</option>
+                <option value="انثى" {{$edit->gender === 'انثى' ? 'selected' : ' ' }}>انثى</option>
                  </select>
           </div>
         </div>

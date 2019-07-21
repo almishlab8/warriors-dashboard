@@ -16,7 +16,7 @@
                         <td>
                             {{$classe->class_name}}
                         </td>
-                    <td><a class="a" href="{{route('classes.destroy' ,['id' => $classe->id])}}">حذف الصف</a></td>
+                    <td><a class="a" href="{{route('classes.destroy' ,['id' => $classe->id])}}"><div class="btn btn-danger">حذف الصف</div></a></td>
                     </tr>
                     @endforeach
 
