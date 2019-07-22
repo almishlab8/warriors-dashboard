@@ -47,10 +47,7 @@ class User extends Authenticatable
 
       //Link the user table and students
 
-       public function students()
-       {
-         return $this->hasOne('App\Students');
-       }
+
 
        public function profile(){
         return $this->hasOne('App\userProfile');

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<form action="{{route('students.store')}}" method="POST" enctype="multipart/form-data">
+<form action="{{route('students.store'  )}}" method="POST" enctype="multipart/form-data">
     {{ csrf_field() }}
     <div class="from-1">
 
@@ -9,13 +9,25 @@
             <div class="form-group row">
           <label for="inputEmail3" class="col-sm-2 col-form-label">الأسم</label>
           <div class="col-sm-10">
-<<<<<<< HEAD
-            <input type="text" name="name" value='{{ old("name") }}'  class="form-control" id="inputEmail3" placeholder="الأاسم">
-=======
             <input type="text" name="name" value="{{ old('name') }}" class="form-control" id="inputEmail3" placeholder="الأاسم">
->>>>>>> af94892bef7e9758bc38bd4fa205e7488146b83a
           </div>
         </div>
+
+
+
+
+          <div class="form-group row">
+            <label for="inputEmail3" class="col-sm-2 col-form-label">البريد الكتروني</label>
+            <div class="col-sm-10">
+              <input type="text" name="email" value="{{ old('email') }}" class="form-control" id="inputEmail3" placeholder="البريد الكتروني">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="inputEmail3" class="col-sm-2 col-form-label">الرمز السري</label>
+            <div class="col-sm-10">
+              <input type="password" name="password" value="{{ old('password') }}" class="form-control" id="inputEmail3" placeholder="الرمز السري">
+            </div>
+          </div>
         <div class="form-group row">
                 <label for="inputEmail3" class="col-sm-2 col-form-label">تاريخ الميلاد</label>
                 <div class="col-sm-10">

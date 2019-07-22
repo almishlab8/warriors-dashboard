@@ -1,21 +1,32 @@
 @extends('layouts.app')
 
 @section('content')
-<form action="{{route('students.update' , ['id' => $edit->id])}}" method="POST" enctype="multipart/form-data">
+<form action="{{route('students.update' , ['id' => $edit->id ])}}" method="POST" enctype="multipart/form-data">
     {{ csrf_field() }}
     <div class="from-1">
 
-
-            <div class="form-group row">
-          <label for="inputEmail3" class="col-sm-2 col-form-label">الأسم</label>
-          <div class="col-sm-10">
-            <input type="text" name="name"  value="{{$edit->name}}" class="form-control" id="inputEmail3" placeholder="الأاسم">
+        <div class="form-group row">
+            <label for="inputEmail3" class="col-sm-2 col-form-label">الأسم</label>
+            <div class="col-sm-10">
+              <input type="text" name="name"  class="form-control"  id="inputEmail3" placeholder="الأاسم" value="{{$edit->user->name}}">
+            </div>
           </div>
-        </div>
+            <div class="form-group row">
+              <label for="inputEmail3" class="col-sm-2 col-form-label">الاميل</label>
+              <div class="col-sm-10">
+              <input type="text" name="email" class="form-control" id="inputEmail3" placeholder="الربد الكتروني" value="{{$edit->user->email}}">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="inputEmail3" class="col-sm-2 col-form-label">الرمز السري</label>
+              <div class="col-sm-10">
+                <input type="password"  name="password" class="form-control" id="inputEmail3" placeholder="الرمز السري"  >
+              </div>
+            </div>
         <div class="form-group row">
                 <label for="inputEmail3" class="col-sm-2 col-form-label">تاريخ الميلاد</label>
                 <div class="col-sm-10">
-                <input  type="date" value="{{old('birthday')}}" name="birthday" value="{{$edit->birthday }}" class="form-control" id="inputEmail3" placeholder="تاريخ الميلاد">
+                <input  type="text"  name="birthday" value="{{$edit->birthday }}" class="form-control" id="inputEmail3" placeholder="تاريخ الميلاد">
                 </div>
          </div>
         <div class="form-group row">
