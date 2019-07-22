@@ -53,14 +53,14 @@
                                 <label for="inputPassword3" class="col-sm-2 col-form-label">الجنس</label>
                                 <div class="col-sm-10">
                                     <select class="form-control" name="gender">
-                                        <option
-                                        @if($teacher->gender == 'men')
+                                        <option value="ذكر"
+                                        @if($teacher->gender == 'ذكر')
                                         selected
                                         @else
                                         ''
                                         @endif>ذكر</option>
-                                        <option value="women"
-                                        @if($teacher->gender == 'women')
+                                        <option value="انثى"
+                                        @if($teacher->gender == 'انثى')
                                         selected
                                         @else
                                         ''

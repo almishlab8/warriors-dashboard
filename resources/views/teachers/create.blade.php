@@ -60,8 +60,8 @@
                             <label for="inputPassword3" class="col-sm-2 col-form-label">الجنس</label>
                             <div class="col-sm-10">
                                 <select class="form-control" name="gender">
-                                    <option value="men">ذكر</option>
-                                    <option value="women">انثى</option>
+                                    <option value="ذكر">ذكر</option>
+                                    <option value="انثى">انثى</option>
                                 </select>
                             </div>
                             </div>

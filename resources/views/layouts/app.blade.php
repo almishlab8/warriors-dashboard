@@ -108,6 +108,17 @@ rel="stylesheet"  type="text/css" href="files/media/css/dataTables.bootstrap4.cs
                         font-style: normal;
 
                 }
+                .table thead th {
+                                    vertical-align: bottom;
+                                    border-bottom: 2px solid #299e81;
+                                    border-top: 1px solid #E3EBF3;
+                                    background-color: #37bc9b;
+                                    color:#fff
+                                }
+                                .act-btn{     font-size: 0.8rem;   padding: 3px;}
+                                .table th, .table td {
+    padding: 0.75rem 1.93rem;
+}
             </style>
     </head>
     <body
