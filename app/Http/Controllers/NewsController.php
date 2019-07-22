@@ -16,7 +16,7 @@ class NewsController extends Controller
     {
        
         $news = News::paginate(10);
-        return view('news\index',compact('news'));
+        return view('news.index',compact('news'));
     }
 
     /**
@@ -26,7 +26,7 @@ class NewsController extends Controller
      */
     public function create()
     {
-        return view('news\create');
+        return view('news.create');
     }
 
     /**
@@ -84,7 +84,7 @@ class NewsController extends Controller
     public function edit($id)
     {
         $news = News::find($id);
-        return view('news\edit',compact('news'));
+        return view('news.edit',compact('news'));
 
     }
 
