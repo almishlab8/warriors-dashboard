@@ -24,6 +24,25 @@
                                     <input type="text" name="name" class="form-control" id="inputEmail3" value="{{$teacher->name }}" placeholder="ادخال اسم الاستاذ">
                                 </div>
                             </div>
+
+                            <div class="user-form">
+                                <h1>تعديل معلومات حساب الاستاذ</h1>
+                                <div class="form-group row">
+                                    <label for="inputEmail3" class="col-sm-2 col-form-label">الايميل</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" name="email" class="form-control" id="inputEmail3" value="{{$teacher->user->email }}"  placeholder="ادخال ايميل الاستاذ">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="inputEmail3" class="col-sm-2 col-form-label">الباسورد</label>
+                                    <div class="col-sm-10">
+                                        <input type="password" name="password" class="form-control" id="inputEmail3"  placeholder="ادخال باسورد الاستاذ">
+                                    </div>
+                                </div>
+                            </div>
+
+
                             <div class="form-group row">
                                 <label for="inputEmail3" class="col-sm-2 col-form-label">تاريخ الميلاد</label>
                                 <div class="col-sm-10">
@@ -39,13 +58,13 @@
                                         selected
                                         @else
                                         ''
-                                        @endif>Men</option>
+                                        @endif>ذكر</option>
                                         <option value="women"
                                         @if($teacher->gender == 'women')
                                         selected
                                         @else
                                         ''
-                                        @endif>Women</option>
+                                        @endif>انثى</option>
                                     </select>
                                 </div>
                             </div>

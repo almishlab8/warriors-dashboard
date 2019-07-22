@@ -33,7 +33,7 @@
         <td>{{$teacher->qualifications}}</td>
         <td>{{$teacher->created_at}}</td>
         <td>
-            <a  href="/teachers/{{$teacher->id}}/edit" class="btn btn-primary">Edit</a>
+            <a  href="/teachers/{{$teacher->id}}/edit" class="btn btn-primary">تعديل</a>
         </td>
 
         <td>

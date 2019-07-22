@@ -27,9 +27,29 @@
                             <div class="form-group row">
                                 <label for="inputEmail3" class="col-sm-2 col-form-label">الأسم</label>
                                 <div class="col-sm-10">
-                                    <input type="text" name="name" value="{{ old('name') }}" class="form-control" id="inputEmail3" value="{{ old('name') }}" placeholder="ادخال اسم الاستاذ">
+                                    <input type="text" name="name" class="form-control" id="inputEmail3" value="{{ old('name') }}" placeholder="ادخال اسم الاستاذ">
                                 </div>
                             </div>
+
+                            <div class="user-form">
+                                <h1>معلومات حساب الاستاذ</h1>
+                                <div class="form-group row">
+                                    <label for="inputEmail3" class="col-sm-2 col-form-label">الايميل</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" name="email" class="form-control" id="inputEmail3" value="{{ old('email') }}" placeholder="ادخال ايميل الاستاذ">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="inputEmail3" class="col-sm-2 col-form-label">الباسورد</label>
+                                    <div class="col-sm-10">
+                                        <input type="password" name="password" class="form-control" id="inputEmail3" value="{{ old('password') }}" placeholder="ادخال باسورد الاستاذ">
+                                    </div>
+                                </div>
+                            </div>
+
+
+
                             <div class="form-group row">
                                 <label for="inputEmail3" class="col-sm-2 col-form-label">تاريخ الميلاد</label>
                                 <div class="col-sm-10">
