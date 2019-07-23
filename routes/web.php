@@ -63,3 +63,11 @@ Route::get('classes/destroy/{id}', 'ClassesContrroller@destroy')->name('classes.
 Route::get('classes/addclass/', 'ClassesContrroller@create')->name('classes.addclass');
 Route::post('classes/store', 'ClassesContrroller@store')->name('classes.store');
 
+
+// News by Hassan
+Route::get('/news','NewsController@index')->name('news');
+Route::get('/news/create','NewsController@create')->name('news.create');
+Route::post('/news/store','NewsController@store')->name('news.store');
+Route::get('/news/edit/{id}','NewsController@edit')->name('news.edit');
+Route::post('/news/update/{id}','NewsController@update')->name('news.update');
+Route::get('/news/delete/{id}','NewsController@destroy')->name('news.delete');

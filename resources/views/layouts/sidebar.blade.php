@@ -21,18 +21,17 @@
                         </span>
                     </a>
                     <ul class="menu-content">
-                        <li class="">
-                            <a href="#" data-i18n="nav.dash.main" class="menu-item">
-                                <i class="icon-cast"></i>عرض
-                            </a>
-                        </li>
-                        <li class="">
-                            <a href="#" data-i18n="nav.dash.main" class="menu-item">
+                        <li class="{{ Request::is('news/create') ? 'active' : '' }}">
+                            <a href="{{route('news.create')}}" data-i18n="nav.dash.main" class="menu-item">
                                 <i class="icon-plus"></i>اضافة
                             </a>
                         </li>
-
-                </ul>
+                        <li class="{{ Request::is('news') ? 'active' : '' }}">
+                            <a href="{{route('news')}}" data-i18n="nav.dash.main" class="menu-item">
+                                <i class="icon-cast"></i>عرض
+                            </a>
+                        </li>
+                    </ul>
             </li>
 
 

@@ -174,8 +174,12 @@ class StudentsContrroller extends Controller
     }
     public function destroy($id)
     {
-        $student = Students::find($id);
-        $student->delete();
+        $students = Students::find($id);
+        $user = User::find($students->USERS_ID);
+
+        $user->delete();
+        $students->delete();
+
         return redirect()->back()->with('delete' ,' ');
     }
 

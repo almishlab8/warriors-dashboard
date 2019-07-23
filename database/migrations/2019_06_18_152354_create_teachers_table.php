@@ -20,7 +20,7 @@ class CreateTeachersTable extends Migration
             $table->string('qualifications' , 255);
             $table->string('address' , 255);
             $table->string('phone_no' , 255);
-            $table->dateTime('birthday');
+            $table->date('birthday');
             $table->string('teacher_documents' , 255);
             $table->integer('USER_ID');
             $table->string('teacher_certificate', 255);
