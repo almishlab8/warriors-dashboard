@@ -31,7 +31,7 @@ class StudentsContrroller extends Controller
         $user = new  User;
         $this->validate($request,[
             'name'              => 'required|string|max:255',
-            'email'             => 'required|string|email|max:255',
+            'email'             => 'required|string|email|max:255|unique:users',
             'password'          => 'string|max:255',
             'birthday'          => 'required',
             'gender'            => 'required',
@@ -49,6 +49,7 @@ class StudentsContrroller extends Controller
             'phone_no.required'   => 'رقم الهاتف مطلوب',
             'email.required'      => 'الربد الكتروني مطلوب',
             'email'               => 'رجاء اكتب البريد الكتروني الصحيح',
+            'unique'               => 'البريد الكتروني مستخدم',
 
         ]);
       if($request->student_documents ){
@@ -111,7 +112,7 @@ class StudentsContrroller extends Controller
          $user = User::find($students->USERS_ID);
         $this->validate($request,[
             'name'              => 'required|string|max:255',
-            'email'             => 'required|string|email|max:255',
+            'email'             => 'required|string|email|max:255|unique',
             'password'          => 'required|string|max:255',
             'birthday'          => 'required',
             'gender'            => 'required',
