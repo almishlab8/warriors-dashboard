@@ -4,7 +4,7 @@
 
 <div class="container">
 {{-- Start Title --}}
-<h1 class="my-3">أضافة الأخبار</h1>
+<h1 class="my-2">أضافة الأخبار</h1>
 {{-- End Title --}}
 
     @if(count($errors)>0)
@@ -51,3 +51,4 @@
         </div>
     </form>
 </div>
+@endsection

@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\News;
 use Session;
@@ -15,8 +15,8 @@ class NewsController extends Controller
     public function index()
     {
        
-        $news = News::paginate(10);
-        return view('news\index',compact('news'));
+        $news = News::latest()->paginate(5);
+        return view('news.index',compact('news'));
     }
 
     /**
@@ -26,7 +26,7 @@ class NewsController extends Controller
      */
     public function create()
     {
-        return view('news\create');
+        return view('news.create');
     }
 
     /**
@@ -44,24 +44,22 @@ class NewsController extends Controller
             'title.required' => 'يرجى ادخال عنوان الخبر',
             'description.required' => 'يرجى ادخال مضمون الخبر'
         ]);
+
         if($request->hasFile('image')) {
-        $img = $request->image;
-        $image = time().$img->getClientOriginalName();
-        $img->move('upload/news',$image);
-        } else {
-        $image = 'default.png'; 
+            $image = $request->file('image');
+            $new_name = rand() . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path('upload\news'), $new_name);
+        } 
+        else {
+            $new_name = "default.png";
         }
         $new = News::create([
-            'image' => 'upload/news/'. $image,
+            'image' => $new_name,
             'title' => $request->title,
             'description' => $request->description
         ]);
-
-        Session::flash('success','تم أضافة الخبر بنجاح');
-        //dd($request)->get();
-        return redirect()->back();
-
-        //return redirect()->route('news');
+         Session::flash('success','تم أضافة الخبر بنجاح');
+         return redirect()->back();
     }
 
     /**
@@ -72,7 +70,8 @@ class NewsController extends Controller
      */
     public function show($id)
     {
-        //
+        $news = News::find($id);
+        return view('news.show',compact('news'));
     }
 
     /**
@@ -84,7 +83,7 @@ class NewsController extends Controller
     public function edit($id)
     {
         $news = News::find($id);
-        return view('news\edit',compact('news'));
+        return view('news.edit',compact('news'));
 
     }
 
@@ -106,19 +105,28 @@ class NewsController extends Controller
             'description.required' => 'يرجى ادخال مضمون الخبر'
         ]);
 
-        if($request->hasFile('image')) {
-        $img = $request->image;
-        $image = time().$img->getClientOriginalName();
-        $img->move('upload/news',$image);
-        $new->image = 'upload/news/'. $image; 
+        $image = $request->file('image');
+        if($image != ''){
+            if ($new->image == "default.png") {
+                $new_name = rand() . '.' . $image->getClientOriginalExtension();
+                $image->move(public_path('upload\news'), $new_name);
+            } else {
+                $image_path = public_path('upload\news').'/'.$new->image;
+                unlink($image_path);
+                $new->delete();
+                $new_name = rand() . '.' . $image->getClientOriginalExtension();
+                $image->move(public_path('upload\news'), $new_name);
+            }
         }
-
-        $new->title = $request->title;
-        $new->description = $request->description;
-        $new->save();   
-           
+        else {
+            $new_name = $new->image;
+        }
+            $new->image = $new_name;
+            $new->title = $request->title;
+            $new->description = $request->description;
+            $new->save();   
         Session::flash('success','تم تحديث الخبر بنجاح');
-        return redirect()->route('news');
+        return redirect('news');
     }
 
     /**
@@ -130,9 +138,16 @@ class NewsController extends Controller
     public function destroy($id)
     {
         $news = News::findOrfail($id);
-        $news->delete();
+        if ($news->image == "default.png") {
+            $news->delete();
+        } else {
+            $image_path = public_path('upload\news').'/'.$news->image;
+            unlink($image_path);
+            $news->delete();
+        }
         Session::flash('success','تم حذف الخبر بنجاح');
-        return redirect()->route('news');
+        return redirect('news');
+
 
     }
 }

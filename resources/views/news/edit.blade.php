@@ -3,7 +3,7 @@
 {{-- @include('layouts.messages') --}}
 <div class="container">
 {{-- Start Title --}}
-    <h1 class="my-3">صفحة الأخبار</h1>
+    <h1 class="my-2">تعديل الخبر </h1>
 {{-- End Title --}}
     @if(count($errors)>0)
         <div class="alert alert-danger" role="alert">
@@ -14,7 +14,7 @@
     @endif
 
     @if (Session::has('success'))
-        <div id="alert" class="alert alert-success" role="alert">
+        <div id="alert" class="alert alert-success" role="alert" style="transition:3s">
             {{Session::get('success')}}
         </div>
         <script>
@@ -25,15 +25,17 @@
         </script>
     @endif
 {{-- Start Content --}}
-<form action="{{ route('news.update',['id' => $news->id]) }}" method="POST" enctype="multipart/form-data">
+<form action="{{ route('news.update', $news->id) }}" method="POST" enctype="multipart/form-data">
     @csrf
+    @method('PATCH')
     <div class="p-3"  style="background-color:#FFF;box-shadow:2px 2px 2px #CCC">
 
             <div class="form-group">
                 <label>صورة الخبر :</label>
                 <br>
                 <input type="file" class="form-control-file" name="image" alt="" id="i" style="display:none">
-                <label for="i"><img src="../../{{ $news->image }}" class="rounded" alt="{{ $news->image }}" srcset="" width="100px" height="100px"></label>  
+                <label  for="i"><img src="{{ URL::to('/') }}/upload/news/{{ $news->image }}" class="rounded" alt="{{ $news->image }}" srcset="" width="100"></label>  
+                {{-- <label for="i"><img src="../../{{ $news->image }}" class="rounded" alt="{{ $news->image }}" srcset="" width="100px" height="100px"></label>   --}}
             </div>
             
             <div class="form-group" style="width: 28rem;">
@@ -49,6 +51,7 @@
             <button type="submit" class="btn btn-primary">تحديث</button>
     </div>
 </form>
+<a href="{{ route('news.index') }}" class="btn btn-info mt-1" style="text-align:right !important">رجوع</a>
 {{-- End Content --}}
 </div>
 @endsection

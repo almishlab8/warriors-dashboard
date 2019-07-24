@@ -22,12 +22,12 @@
                     </a>
                     <ul class="menu-content">
                         <li class="{{ Request::is('news/create') ? 'active' : '' }}">
-                            <a href="{{route('news.create')}}" data-i18n="nav.dash.main" class="menu-item">
+                            <a href="{{ route('news.create') }}" data-i18n="nav.dash.main" class="menu-item">
                                 <i class="icon-plus"></i>اضافة
                             </a>
                         </li>
                         <li class="{{ Request::is('news') ? 'active' : '' }}">
-                            <a href="{{route('news')}}" data-i18n="nav.dash.main" class="menu-item">
+                            <a href="{{ route('news.index') }}" data-i18n="nav.dash.main" class="menu-item">
                                 <i class="icon-cast"></i>عرض
                             </a>
                         </li>

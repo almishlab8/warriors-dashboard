@@ -3,7 +3,7 @@
 {{-- @include('layouts.messages') --}}
 <div class="container">
 {{-- Start Title --}}
-    <h1 class="my-3">عرض الأخبار</h1>
+    <h1 class="my-2">عرض الأخبار</h1>
 {{-- End Title --}}
 
     @if(count($errors)>0)
@@ -29,26 +29,32 @@
 {{-- Start Table --}}
 @if (count($news->all()) > 0)
    <div class="">
-        <table class="table" style="background-color:#FFF">
+        <table class="table table-hover table-striped" style="background-color:#FFF">
                 <thead>
-                    <tr>
-                        <td>الرقم</td>
-                        <td>الصورة</td>
-                        <td>العنوان</td>
-                        <td>الوصف</td>
-                        <td>تعديل</td>
-                        <td>حذف</td>
+                    <tr style="background-color:#1d2b36;color:#FFF">
+                        <td scope="col" width="8%">الرقم</td>
+                        <td scope="col" width="15%">الصورة</td>
+                        <td scope="col" width="20%">العنوان</td>
+                        <td scope="col">الوصف</td>
+                        <td scope="col" width="25%">الاجراءات</td>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach ($news as $new)
                         <tr>
-                            <td>{{  $new->id }}</td> 
-                            <td><img src="{{ $new->image }}" class="rounded" alt=" ! Sorry" srcset="" width="100px" height="100px"></td> 
+                            <td scope="row">{{  $new->id }}</td> 
+                            <td><img src="{{ URL::to('/') }}/upload/news/{{ $new->image }}" class="img-thumbnail rounded" alt=" ! Sorry" srcset="" width="100"></td> 
                             <td>{{  $new->title }}</td> 
-                            <td>{{  $new->description }}</td> 
-                            <td><a href="{{route('news.edit',['id' => $new->id])}}" class="btn btn-warning">تعديل</a></td> 
-                            <td><a onclick="return confirm('هل أنت مُتأكد من رغبتك في حذف الخبر ؟؟');" href="{{route('news.delete',['id' => $new->id])}}" class="btn btn-danger">حذف</a></td> 
+                            <td>{{  Str::limit($new->description, 100, ' ...') }}</td> 
+                            <td>
+                                <form action="{{ route('news.destroy', $new->id) }}" method="POST" class="mt-2">
+                                    <a href="{{ route('news.show', $new->id) }}" class="btn btn-info btn-sm">مُشاهدة</a>
+                                    <a href="{{ route('news.edit', $new->id) }}" class="btn btn-warning btn-sm">تعديل</a>
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" onclick="return confirm('هل أنت مُتأكد من رغبتك في حذف الخبر ؟؟');"  class="btn btn-danger btn-sm">حذف</button>
+                                </form>
+                            </td> 
                         </tr>
                         @endforeach
                 </tbody>
