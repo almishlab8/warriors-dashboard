@@ -15,15 +15,15 @@ class StudentsContrroller extends Controller
 
     public function index()
     {
-        $all = DB::table('students')->orderBy('updated_at', 'desc')->get();
+        $students = DB::table('students')->orderBy('updated_at', 'desc')->get();
         $class = Classes::get();
-        return view ('students/all' , compact('all' , 'class'));
+        return view ('students/index' , compact('students' , 'class'));
     }
     public function create()
     {
         $user =     User::get();
         $students = User::get();
-        return view ('students/allstudents' , compact('user' , 'students'));
+        return view ('students/create' , compact('user' , 'students'));
     }
     public function store(Request $request)
     {
@@ -74,7 +74,6 @@ class StudentsContrroller extends Controller
         $students->USERS_ID     =  $user->id  ;
         $students->save();
 
-
         return redirect()->back();
     }else
     {
@@ -92,9 +91,6 @@ class StudentsContrroller extends Controller
         $students->phone_no = $request->phone_no;
         $students->USERS_ID     =  $user->id  ;
         $students->save();
-
-
-
 
         return redirect()->back()->with('seuccs' ,'  ');;
     }

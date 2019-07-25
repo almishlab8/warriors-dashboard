@@ -15,11 +15,7 @@ class NewsController extends Controller
     public function index()
     {
        
-<<<<<<< HEAD
-        $news = News::latest()->paginate(5);
-=======
         $news = News::paginate(10);
->>>>>>> 7f1fa51de82824cfaa92939e24693856d6e870e6
         return view('news.index',compact('news'));
     }
 
@@ -52,7 +48,7 @@ class NewsController extends Controller
         if($request->hasFile('image')) {
             $image = $request->file('image');
             $new_name = rand() . '.' . $image->getClientOriginalExtension();
-            $image->move(public_path('upload\news'), $new_name);
+            $image->move(public_path('upload/news'), $new_name);
         } 
         else {
             $new_name = "default.png";
@@ -113,13 +109,13 @@ class NewsController extends Controller
         if($image != ''){
             if ($new->image == "default.png") {
                 $new_name = rand() . '.' . $image->getClientOriginalExtension();
-                $image->move(public_path('upload\news'), $new_name);
+                $image->move(public_path('upload/news'), $new_name);
             } else {
-                $image_path = public_path('upload\news').'/'.$new->image;
+                $image_path = public_path('upload/news').'/'.$new->image;
                 unlink($image_path);
                 $new->delete();
                 $new_name = rand() . '.' . $image->getClientOriginalExtension();
-                $image->move(public_path('upload\news'), $new_name);
+                $image->move(public_path('upload/news'), $new_name);
             }
         }
         else {
@@ -145,7 +141,7 @@ class NewsController extends Controller
         if ($news->image == "default.png") {
             $news->delete();
         } else {
-            $image_path = public_path('upload\news').'/'.$news->image;
+            $image_path = public_path('upload/news').'/'.$news->image;
             unlink($image_path);
             $news->delete();
         }

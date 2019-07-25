@@ -41,9 +41,9 @@ Route::resource('teachers' , 'TeachersController');
 
 
 //Show all Students
-Route::get('students/all', 'StudentsContrroller@index')->name('students.all');
+Route::get('/students', 'StudentsContrroller@index')->name('students.index');
 //show create && insert db students
-Route::get('students/allstudents', 'StudentsContrroller@create')->name('students.allStudents');
+Route::get('students/create', 'StudentsContrroller@create')->name('students.create');
 Route::post('students/store', 'StudentsContrroller@store')->name('students.store');
 //edit Students
 Route::get('students/edit/{id}', 'StudentsContrroller@edit')->name('students.edit');
@@ -65,12 +65,6 @@ Route::post('classes/store', 'ClassesContrroller@store')->name('classes.store');
 
 
 // News by Hassan
-// Route::get('/news','NewsController@index')->name('news');
-// Route::get('/news/create','NewsController@create')->name('news.create');
-// Route::post('/news/store','NewsController@store')->name('news.store');
-// Route::get('/news/edit/{id}','NewsController@edit')->name('news.edit');
-// Route::post('/news/update/{id}','NewsController@update')->name('news.update');
-// Route::get('/news/delete/{id}','NewsController@destroy')->name('news.delete');
 
 Route::resource('news', 'NewsController');
 
