@@ -49,7 +49,7 @@
             @endif
           <td   data-label="مرفقات الطالب">
             @empty(!$stud->student_documents ==  ' ')
-           <a class="a" href="{{$stud->student_documents}}" download="upload/students/{{$stud->student_documents}}"><div class="btn act-btn btn-primary">تنزيل </div></a>
+           <a class="a" href="upload/student_documents/{{$stud->student_documents}}" download="upload/student_documents/{{$stud->student_documents}}"><div class="btn act-btn btn-primary">تنزيل </div></a>
             @else
             <div>لا توجد مرفقات</div>
             @endempty
@@ -67,5 +67,12 @@
         <label class="text-danger">{{"لا توجد بيانات لِعرضها "}}</label>
     </div>
 @endif
+@if (session('delete'))
+<div class=" text-center alert alert-dismissible alert-success ">
+<button type="button" class="close" data-dismiss="alert">&times;</button>
+<strong>تم حذف الطالب</strong> {{ session('delete')}} <a href="#" class="alert-link"></a>
+</div>
+@endif
+
 </div>
 @endsection

@@ -37,9 +37,14 @@ class Students extends Model
 
 
 
-
   public function user() {
     return $this->belongsTo('App\User' , 'USERS_ID');
  }
 
+
+
+
+protected $fillable = [
+  'name' ,'USERS_ID', 'brithday','gender','status_number','phone_no','address', 'student_documents' , 'classes_ID' ,'student_no'
+];
 }
