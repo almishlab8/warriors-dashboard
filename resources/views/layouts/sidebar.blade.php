@@ -125,15 +125,13 @@
                 </a>
                 <ul class="menu-content">
                     <li>
-                        <a
-                            href="#"
+                        <a href="/image_gallery"
                             data-i18n="nav.cards.card_bootstrap"
                             class="menu-item"> <i class="icon-images2"></i> معرض الصور
                         </a>
                     </li>
                     <li>
-                        <a
-                            href="#"
+                        <a href="videos"
                             data-i18n="nav.cards.card_actions"
                             class="menu-item"> <i class="icon-film"></i>الفيديو
                         </a>

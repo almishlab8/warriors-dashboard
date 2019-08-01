@@ -68,3 +68,5 @@ Route::post('classes/store', 'ClassesContrroller@store')->name('classes.store');
 
 Route::resource('news', 'NewsController');
 
+Route::resource('image_gallery', 'Gallery_imagesController');
+Route::resource('videos', 'VideoController');

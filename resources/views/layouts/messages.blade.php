@@ -18,7 +18,7 @@
 
  @if(session()->has('success'))
  <div id="suc" class="alert alert-success">
- 	<h2>{{ session('success') }}</h2>
+ 	<h4>{{ session('success') }}</h4>
  </div>
 @endif
 

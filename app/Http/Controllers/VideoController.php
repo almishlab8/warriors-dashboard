@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
-class GalleryController extends Controller
+use App\Video;
+class VideoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +13,10 @@ class GalleryController extends Controller
      */
     public function index()
     {
-        //
+        $videos = Video::paginate(10);
+        $vars = compact(array_keys(get_defined_vars()));
+    
+        return view('videos.index', $vars);
     }
 
     /**
@@ -23,7 +26,7 @@ class GalleryController extends Controller
      */
     public function create()
     {
-        //
+        return view('videos.create');
     }
 
     /**
@@ -34,7 +37,17 @@ class GalleryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,[
+            'video_title' => 'required|string|max:191',
+            'video_url' => 'required|string|max:191',
+        ]);
+        $video = Video::create([
+            'video_title' => $request->video_title,
+            'video_url' => $request->video_url,
+        ]);
+        
+        return redirect()->back()->with('success' ,'تم الحفظ بنجاح');
+
     }
 
     /**
@@ -56,7 +69,11 @@ class GalleryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $video = Video::find($id);
+        $vars = compact(array_keys(get_defined_vars()));
+    
+        return view('videos.edit', $vars);
+    
     }
 
     /**
@@ -68,7 +85,17 @@ class GalleryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $video = Video::find($id);
+        $this->validate($request,[
+            'video_title' => 'required|string|max:191',
+            'video_url' => 'required|string|max:191',
+        ]);
+        $video->video_title = $request->video_title;
+        $video->video_url = $request->video_url;
+
+        $video->save();
+        return redirect()->route('videos.index')->with('success' ,'تم التعديل بنجاح');
+
     }
 
     /**
@@ -79,6 +106,10 @@ class GalleryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $video = Video::find($id);
+
+        $video->delete();
+
+        return redirect()->back()->with('delete' ,'  ');
     }
 }
