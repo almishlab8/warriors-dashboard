@@ -94,6 +94,7 @@ class StudentsContrroller extends Controller
 
     public function update(Request $request, $id)
     {
+        //update  Students
          $students = Students::find($id);
          $user = User::find($students->USERS_ID);
         $this->validate($request,[
