@@ -57,43 +57,27 @@ class StudentsContrroller extends Controller
         $student_documents_new =  time()  .  '.'  .  $request->student_documents->getClientOriginalExtension();
         $picture->move('upload/students/' , $student_documents_new);
         $picture->$picture   = $student_documents_new;
+        $students->student_documents = ('/upload/students/'. $student_documents_new);
+      }else{
+            $students->student_documents ='';
+        }
 
         $user->email       = $request->email;
         $user->name        = $request->name;
         $user->admin        = 3 ;
         $user->password       = bcrypt($request->input('password'));
         $user->save();
-
         $students->name       = $request->name;
         $students->birthday   = $request->birthday;
         $students->gender     = $request->gender;
         $students->student_no = $request->student_no;
         $students->address    = $request->address;
         $students->phone_no   = $request->phone_no;
-        $students->student_documents = ('/upload/students/'. $student_documents_new);
         $students->USERS_ID     =  $user->id  ;
         $students->save();
 
         return redirect()->back();
-    }else
-    {
-        $user->email       = $request->email;
-        $user->name        = $request->name;
-        $user->admin        = 3 ;
-        $user->password       = bcrypt($request->input('password'));
-        $user->save();
 
-        $students->name = $request->name;
-        $students->birthday = $request->birthday;
-        $students->gender = $request->gender;
-        $students->student_no = $request->student_no;
-        $students->address = $request->address;
-        $students->phone_no = $request->phone_no;
-        $students->USERS_ID     =  $user->id  ;
-        $students->save();
-
-        return redirect()->back()->with('seuccs' ,'  ');;
-    }
     }
     public function edit($id)
     {
