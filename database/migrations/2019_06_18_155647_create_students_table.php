@@ -19,7 +19,7 @@ class CreateStudentsTable extends Migration
             $table->string('name', 255);
             $table->string('student_no');
             $table->string('address', 255);
-            $table->string('phone_no', 255);
+            $table->string('phone_no');
             $table->date('birthday')->nullable();
             $table->string('student_documents', 255)->nullable();
             $table->integer('USERS_ID')->default(0);
