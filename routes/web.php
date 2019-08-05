@@ -64,7 +64,10 @@ Route::get('classes/addclass/', 'ClassesContrroller@create')->name('classes.addc
 Route::post('classes/store', 'ClassesContrroller@store')->name('classes.store');
 
 
-// News by Hassan
+Route::resource('students_evaluated', 'RatingContrroller');
 
+
+
+// News by Hassan
 Route::resource('news', 'NewsController');
 

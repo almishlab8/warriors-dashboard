@@ -176,14 +176,22 @@
                 </a>
 
             </li>
+
             <li class=" nav-item">
-                <a href="#">
+                <a href="">
                     <i class="icon-clipboard2"></i>
                     <span data-i18n="nav.content.main" class="menu-title">
                        تقييم الطلبة
                     </span>
                 </a>
+                <ul class="menu-content">
 
+                    <li class=" nav-item">
+                        <a href="{{ route('students_evaluated.index') }}"><span data-i18n="nav.menu_levels.main" class="menu-title"> <i class="icon-cast"></i> عرض تقييم الطلاب </span></a>
+                        <a href="{{route('students_evaluated.create')}}"><span data-i18n="nav.menu_levels.main" class="menu-title"> <i class="icon-user-plus"></i>  اضافة تقييم للطالب  </span></a>
+                    </li>
+
+                </ul>
             </li>
             <li class=" nav-item">
                 <a href="#">
