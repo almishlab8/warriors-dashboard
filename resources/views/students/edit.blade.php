@@ -26,11 +26,7 @@
         <div class="form-group row">
                 <label for="inputEmail3" class="col-sm-2 col-form-label">تاريخ الميلاد</label>
                 <div class="col-sm-10">
-<<<<<<< HEAD
-                <input  type="text"  name="birthday" value="{{$edit->birthday }}" class="form-control" id="inputEmail3" placeholder="تاريخ الميلاد">
-=======
                 <input  type="date"  name="birthday" value="{{$edit->birthday }}" class="form-control" id="inputEmail3" placeholder="تاريخ الميلاد">
->>>>>>> 864a563ce3c1e8e75916cb007f2deda653b8a9b7
                 </div>
          </div>
         <div class="form-group row">
