@@ -18,6 +18,7 @@ class CreateRatingsTable extends Migration
             $table->integer('mark');
             $table->string('description' ,  45);
             $table->integer('students_id');
+            $table->string('material_name');
             $table->timestamps();
         });
     }

@@ -8,7 +8,7 @@ class Material extends Model
 {
     protected $table = 'materials';
     protected $fillable = [
-		'material_name', 'class_name' 
+		'material_name', 'class_name'
     ];
 
     public function class()

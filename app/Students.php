@@ -15,11 +15,10 @@ class Students extends Model
 
  //Link the Students table and rating
 
- public function rating()
- {
-  return $this->hasOne('App\Rating');
- }
-
+      public function rating()
+    {
+        return $this->belongsTo('App\Rating' , 'students_id');
+    }
  //Link the Students table and alerts
 
  public function alerts()

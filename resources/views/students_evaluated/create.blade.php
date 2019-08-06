@@ -12,22 +12,32 @@
           <div class="col-sm-10">
                 <select class="form-control" name="students_id">
                     @foreach ($all_students as $student)
-                    <option value="{{ $student->id }}">{{ $student->name }}</option>
+                    <option value="{{ $student->USERS_ID }}">{{ $student->name }}</option>
                     @endforeach
                  </select>
           </div>
         </div>
         <div class="form-group row">
+            <label for="inputPassword3" class="col-sm-2 col-form-label">أسم المادة </label>
+            <div class="col-sm-10">
+                  <select class="form-control" name="material_name">
+                      @foreach ($materials as $material)
+                      <option value="{{ $material->material_name}}">{{ $material->material_name }}</option>
+                      @endforeach
+                   </select>
+            </div>
+          </div>
+        <div class="form-group row">
             <label for="inputPassword3" class="col-sm-2 col-form-label">درجة الطالب </label>
             <div class="col-sm-10">
-                <input type="text" name="mark" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="درجة الطالب">
+                <input type="text" name="mark" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="أدخل درجة الطالب">
             </div>
           </div>
 
           <div class="form-group row">
             <label for="inputPassword3" class="col-sm-2 col-form-label">وصف الطالب </label>
             <div class="col-sm-10">
-                <input type="text"  name="description" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="وصف الطالب">
+                <input type="text"  name="description" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="أدخل وصف للطالب">
             </div>
           </div>
 

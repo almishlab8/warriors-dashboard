@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 use App\Rating;
 use App\Students;
+use App\User;
+use App\Material;
 use Illuminate\Http\Request;
 class RatingContrroller extends Controller
 {
@@ -11,8 +13,9 @@ class RatingContrroller extends Controller
     public function index()
     {
         $all_students = Rating::get();
+        $all_material = Material::get();
         $students = Students::get();
-        return view('students_evaluated.index' , compact('all_students' , 'students'));
+        return view('students_evaluated.index' , compact('all_students' , 'students' , 'all_material'));
     }
 
     /**
@@ -22,16 +25,19 @@ class RatingContrroller extends Controller
      */
     public function create()
     {
+        $materials  =    Material::get();
         $all_students = Students::get();
-        return view('students_evaluated.create' , compact('all_students'));
+        return view('students_evaluated.create' , compact('all_students' , 'materials'));
     }
 
 
     public function store(Request $request)
     {
+
          $this->validate($request ,[
           'mark' => 'required|numeric' ,
-          'description' => 'required|max:45|string'
+          'description' => 'required|max:45|string',
+          'material_name' => 'required'
          ],[
          'mark.required' => 'درجة الطالب مطلوبة',
          'description.required' => 'وصف الطالب مطلوب',
@@ -39,9 +45,12 @@ class RatingContrroller extends Controller
           "numeric" => "رجاء ادخل رقم",
          ]);
 
-         $rating_tudent =  new Rating();
-         $rating_tudent->create($request->all());
-         return redirect()->route('students_evaluated.index')->with('successs' , ' ');
+
+          Rating::create($request->all());
+          return redirect()->route('students_evaluated.index')
+          ->with('successs' , ' ');
+
+
     }
 
 
@@ -61,12 +70,14 @@ class RatingContrroller extends Controller
     {
         $this->validate($request ,[
             'mark' => 'required|numeric' ,
-            'description' => 'required|max:45|string'
+            'description' => 'required|max:45|string',
+            'material_name' => 'required',
            ],[
            'mark.required' => 'درجة الطالب مطلوبة',
            'description.required' => 'وصف الطالب مطلوب',
             'max' => '45 حرف حد الاقصى',
             "numeric" => "رجاء ادخل رقم",
+            'material_name.required'  => 'المادة مطلوبة'
            ]);
 
 
