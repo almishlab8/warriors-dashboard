@@ -33,8 +33,14 @@ Route::get('/', 'HomeController@index');
 Route::get('/home', 'HomeController@index');
 
 
-//Teachers Controller
+//Teachers Controller By Ahmed Al-Rayan
 Route::resource('teachers' , 'TeachersController');
+
+//Studing_subjects Controller By Ahmed Al-Rayan
+Route::resource('studingSubjects' , 'Studing_subjectsController');
+
+//Home_work Controller By Ahmed Al-Rayan
+Route::resource('homeworks' , 'Home_workController');
 });
 
 

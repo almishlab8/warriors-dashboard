@@ -159,13 +159,21 @@
 
             </li>
             <li class=" nav-item">
-                <a href="#">
+                <a href="{{route('homeworks.index')}}">
                     <i class="icon-books"></i>
                     <span data-i18n="nav.advance_cards.main" class="menu-title">
                         الواجبات
                     </span>
                 </a>
+            </li>
 
+            <li class=" nav-item">
+                <a href="{{route('studingSubjects.index')}}">
+                    <i class="icon-books"></i>
+                    <span data-i18n="nav.advance_cards.main" class="menu-title">
+                        واجبات الطالب
+                    </span>
+                </a>
             </li>
             <li class=" nav-item">
                 <a href="#">
