@@ -131,7 +131,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="videos"
+                        <a href="{{route('videos.index')}}"
                             data-i18n="nav.cards.card_actions"
                             class="menu-item"> <i class="icon-film"></i>الفيديو
                         </a>
@@ -148,6 +148,15 @@
 
             </li>
             <li class=" nav-item">
+                <a href="{{route('materials.index')}}">
+                    <i class="icon-books"></i>
+                    <span data-i18n="nav.advance_cards.main" class="menu-title">
+                        المواد الدراسية
+                    </span>
+                </a>
+
+            </li>
+            <li class=" nav-item">
                 <a href="#">
                     <i class="icon-bullhorn"></i>
                     <span data-i18n="nav.advance_cards.main" class="menu-title">
@@ -157,13 +166,21 @@
 
             </li>
             <li class=" nav-item">
-                <a href="#">
+                <a href="{{route('homeworks.index')}}">
                     <i class="icon-books"></i>
                     <span data-i18n="nav.advance_cards.main" class="menu-title">
                         الواجبات
                     </span>
                 </a>
+            </li>
 
+            <li class=" nav-item">
+                <a href="{{route('studingSubjects.index')}}">
+                    <i class="icon-books"></i>
+                    <span data-i18n="nav.advance_cards.main" class="menu-title">
+                        واجبات الطالب
+                    </span>
+                </a>
             </li>
             <li class=" nav-item">
                 <a href="#">
@@ -174,14 +191,22 @@
                 </a>
 
             </li>
+
             <li class=" nav-item">
-                <a href="#">
+                <a href="">
                     <i class="icon-clipboard2"></i>
                     <span data-i18n="nav.content.main" class="menu-title">
                        تقييم الطلبة
                     </span>
                 </a>
+                <ul class="menu-content">
 
+                    <li class=" nav-item">
+                        <a href="{{ route('students_evaluated.index') }}"><span data-i18n="nav.menu_levels.main" class="menu-title"> <i class="icon-cast"></i> عرض تقييم الطلاب </span></a>
+                        <a href="{{route('students_evaluated.create')}}"><span data-i18n="nav.menu_levels.main" class="menu-title"> <i class="icon-user-plus"></i>  اضافة تقييم للطالب  </span></a>
+                    </li>
+
+                </ul>
             </li>
             <li class=" nav-item">
                 <a href="#">

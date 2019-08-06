@@ -37,7 +37,7 @@ class StudentsContrroller extends Controller
             'gender'            => 'required',
             'student_no'        => 'required|string|max:255',
             'address'           => 'required|string|max:255',
-            'phone_no'          => 'required|numeric|max:255',
+            'phone_no'          => 'required',
             'student_documents' => 'mimes:pdf',
            ],
             [
@@ -54,7 +54,7 @@ class StudentsContrroller extends Controller
             'password.required'   => '  رقم السري   مطلوب',
 
         ]);
-          
+
 
         $user->email       = $request->email;
         $user->name        = $request->name;
@@ -70,7 +70,7 @@ class StudentsContrroller extends Controller
             $fileNameCer = $fileName . '_' . time() . '.' .$extension;
             $path = $request->file('student_documents')->move('upload/student_documents/',$fileNameCer);
             $students->student_documents = $fileNameCer;
-        
+
         }
 
         $students->name       = $request->name;
@@ -83,7 +83,7 @@ class StudentsContrroller extends Controller
         $students->save();
 
         return redirect()->back()->with('seuccs' ,' ');
-   
+
     }
     public function edit($id)
     {
@@ -94,17 +94,18 @@ class StudentsContrroller extends Controller
 
     public function update(Request $request, $id)
     {
+        //update  Students
          $students = Students::find($id);
          $user = User::find($students->USERS_ID);
         $this->validate($request,[
             'name'              => 'required|string|max:255',
             'email'             => 'required|string|email|max:255',
-            'password'          => 'required|string|max:255',
+
             'birthday'          => 'required',
             'gender'            => 'required',
             'student_no'        => 'required|string|max:255',
             'address'           => 'required|string|max:255',
-            'phone_no'          => 'required|numeric|max:255',
+            'phone_no'          => 'required',
             'student_documents' => 'mimes:pdf',
            ] ,  [
             'name.required'       => 'الأسم مطلوب',
@@ -114,13 +115,12 @@ class StudentsContrroller extends Controller
             'address.required'    => ' عنوان السكن  مطلوب',
             'phone_no.required'   => '  رقم الهاتف   مطلوب',
             'email.required'      => '      الربد الكتروني مطلوب',
-            'password.required'   => '  رقم السري   مطلوب',
             'email'               => 'رجاء اكتب البريد الكتروني الصحيح',
             'numeric'               => 'المطلوب رقم',
 
         ]);
-       
-     
+
+
         if(!empty($request->student_documents)) {
             if($students->student_documents)
             {
@@ -140,10 +140,15 @@ class StudentsContrroller extends Controller
 
         }
 
+        if (request()->has('password') && request()->get('password') != '') {
+            $user = $user + ['password' => Hash::make($request->password)];
+        }else {
+
+            unset($user['password']);
+        }
             $user->email       = $request->email;
             $user->name        = $request->name;
             $user->admin        = 3 ;
-            $user->password       = bcrypt($request->input('password'));
             $user->save();
 
             $students->name = $request->name;
@@ -156,7 +161,7 @@ class StudentsContrroller extends Controller
 
             $students->save();
             return redirect()->back()->with('seuccs' ,' ');
-   
+
     }
     public function destroy($id)
     {
