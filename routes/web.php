@@ -36,11 +36,11 @@ Route::get('/home', 'HomeController@index');
 //Teachers Controller By Ahmed Al-Rayan
 Route::resource('teachers' , 'TeachersController');
 
-//Studing_subjects Controller By Ahmed Al-Rayan
-Route::resource('studingSubjects' , 'Studing_subjectsController');
+//Student homeworks Controller By Ahmed Al-Rayan
+Route::resource('student_homeworks' , 'Student_homeworkController');
 
-//Home_work Controller By Ahmed Al-Rayan
-Route::resource('homeworks' , 'Home_workController');
+//Class homeworks Controller By Ahmed Al-Rayan
+Route::resource('class_homeworks' , 'Class_homeworkController');
 });
 
 

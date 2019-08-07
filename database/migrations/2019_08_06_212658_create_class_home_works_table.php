@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateHomeWorksTable extends Migration
+class CreateClassHomeWorksTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateHomeWorksTable extends Migration
      */
     public function up()
     {
-        Schema::create('home_works', function (Blueprint $table) {
+        Schema::create('class_home_works', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('subject');
-            $table->dateTime('hw_date');
-            $table->integer('studing_subjects_ID');
+            $table->string('notes');
+            $table->dateTime('deadline_date');
+            $table->integer('material_ID');
             $table->integer('classes_ID');
             $table->timestamps();
         });
@@ -30,6 +30,6 @@ class CreateHomeWorksTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('home_works');
+        Schema::dropIfExists('class_home_works');
     }
 }

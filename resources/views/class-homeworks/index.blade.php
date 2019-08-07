@@ -7,34 +7,34 @@
 
 
 <div style="padding-bottom:5%;">
-  <a  href="/homeworks/create" class="btn btn-success"><i class="ficon icon-plus"></i> آضافة واجب جديد</a>
+  <a  href="/class_homeworks/create" class="btn btn-success"><i class="ficon icon-plus"></i> آضافة واجب جديد</a>
 </div>
-@if (count($homeWorks->all()) > 0)
+@if (count($class_homeworks->all()) > 0)
 <div class="table-responsive text-nowrap">
 <table class="table table-striped w-auto " style="width:auto;font-size: 12px;">
     <thead >
       <tr>
         <th>الصفوف</th>
-        <th>المواد</th>
-        <th>واجبات الطالب</th>
-        <th>تاريخ الواجب</th>
+        <th>الملاحظات</th>
+        <th>المواد </th>
+        <th>تاريخ تسليم الواجب</th>
         <th>التعديل</th>
         <th>الحذف</th>
       </tr>
     </thead>
     <tbody>
-        @foreach ($homeWorks as $homeWork)
+        @foreach ($class_homeworks as $class_homework)
         <tr>
-        <td>{{$homeWork->class->class_name}}</td>
-        <td>{{$homeWork->subject}}</td>
-        <td>{{$homeWork->studing_subject->name}}</td>
-        <td>{{$homeWork->hw_date}}</td>
+        <td>{{$class_homework->class->class_name}}</td>
+        <td>{{$class_homework->notes}}</td>
+        <td>{{$class_homework->material->material_name}}</td>
+        <td>{{$class_homework->deadline_date}}</td>
         <td>
-            <a  href="/homeworks/{{$homeWork->id}}/edit" class="btn act-btn btn-primary">تعديل</a>
+            <a  href="/class_homeworks/{{$class_homework->id}}/edit" class="btn act-btn btn-primary">تعديل</a>
         </td>
 
         <td>
-          <form class="delete" action="{{ action('Home_workController@destroy',$homeWork->id) }}" method="POST" onsubmit ='return confirmDelete()'>
+          <form class="delete" action="{{ action('Class_homeworkController@destroy',$class_homework->id) }}" method="POST" onsubmit ='return confirmDelete()'>
               <input type="hidden" name="_method" value="DELETE">
               {{ csrf_field() }}
               <input type="submit" value="حذف" class="btn act-btn btn-danger">

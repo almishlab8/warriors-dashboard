@@ -140,6 +140,25 @@
             </li>
             <li class=" nav-item">
                 <a href="#">
+                    <i class="icon-home"></i>
+                    <span data-i18n="nav.project.main" class="menu-title">الواجبات
+                    </span>
+                </a>
+                <ul class="menu-content">
+                    <li>
+                    <a href="{{route('class_homeworks.index')}}" data-i18n="nav.dash.main" class="menu-item">
+                                <i class="icon-cast"></i> واجبات الصفوف
+                            </a>
+                        <a
+                        href="{{route('student_homeworks.index')}}"
+                            data-i18n="nav.invoice.invoice_template"
+                            class="menu-item"> <i class="icon-cast"></i> واجبات الطلاب
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class=" nav-item">
+                <a href="#">
                     <i class="icon-bubbles3"></i>
                     <span data-i18n="nav.advance_cards.main" class="menu-title">
                         الرسائل
@@ -164,23 +183,6 @@
                     </span>
                 </a>
 
-            </li>
-            <li class=" nav-item">
-                <a href="{{route('homeworks.index')}}">
-                    <i class="icon-books"></i>
-                    <span data-i18n="nav.advance_cards.main" class="menu-title">
-                        الواجبات
-                    </span>
-                </a>
-            </li>
-
-            <li class=" nav-item">
-                <a href="{{route('studingSubjects.index')}}">
-                    <i class="icon-books"></i>
-                    <span data-i18n="nav.advance_cards.main" class="menu-title">
-                        واجبات الطالب
-                    </span>
-                </a>
             </li>
             <li class=" nav-item">
                 <a href="#">

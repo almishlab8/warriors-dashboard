@@ -3,11 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Home_work;
+use App\Class_home_work;
+use App\Material;
 use App\Classes;
-use App\Studing_subjects;
 
-class Home_workController extends Controller
+class Class_homeworkController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +16,8 @@ class Home_workController extends Controller
      */
     public function index()
     {
-        $homeWorks = Home_work::with('class' , 'studing_subject')->paginate(5);
-        return view('homeworks.index' , compact('homeWorks'));
+        $class_homeworks = Class_home_work::paginate(5);
+        return view('class-homeworks.index' , compact('class_homeworks'));
     }
 
     /**
@@ -28,8 +28,8 @@ class Home_workController extends Controller
     public function create()
     {
         $classes = Classes::get(['id' , 'class_name']);
-        $studingSubjects = Studing_subjects::get(['id' , 'name']);
-        return view('homeworks.create' , compact('classes' , 'studingSubjects'));
+        $materials = Material::get(['id' , 'material_name']);
+        return view('class-homeworks.create' , compact('classes' , 'materials'));
     }
 
     /**
@@ -41,18 +41,19 @@ class Home_workController extends Controller
     public function store(Request $request)
     {
         $data = $this->validate($request , [
-            'subject'               => 'required|string',
-            'hw_date'               => 'required|date',
+            'notes'                 => 'required|string|max:255',
+            'deadline_date'         => 'required|date',
             'classes_ID'            => 'required|numeric',
-            'studing_subjects_ID'   => 'required|numeric',
+            'material_ID'           => 'required|numeric',
         ], [] , [
-            'subject'               => 'اسم المادة',
-            'hw_date'               => 'تاريج الواجب',
+            'notes'                 => 'ملاحظات او وصف للواجب',
+            'deadline_date'         => 'تاريج تسليم الواجب',
             'classes_ID'            => 'اسم الصف',
-            'studing_subjects_ID'   => ' واجب الطالب ',
+            'material_ID'           => ' اسم المادة ',
         ]);
 
-        Home_work::create($data);
+        //dd($data);
+        Class_home_work::create($data);
         return redirect()->back()->with('success' ,' ');
     }
 
@@ -75,10 +76,10 @@ class Home_workController extends Controller
      */
     public function edit($id)
     {
-        $homework = Home_work::with('class')->findOrfail($id);
+        $class_homework = Class_home_work::findOrfail($id);
         $classes = Classes::get(['id' , 'class_name']);
-        $studingSubjects = Studing_subjects::get(['id' , 'name']);
-        return view('homeworks.edit' , compact('homework' , 'classes' , 'studingSubjects'));
+        $materials = Material::get(['id' , 'material_name']);
+        return view('class-homeworks.edit' , compact('class_homework' , 'classes' , 'materials'));
     }
 
     /**
@@ -90,20 +91,20 @@ class Home_workController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $homeWork = Home_work::findOrfail($id);
+        $class_homework = Class_home_work::findOrfail($id);
         $data = $this->validate($request , [
-            'subject'               => 'sometimes|string',
-            'hw_date'               => 'sometimes|date',
+            'notes'                 => 'sometimes|string|max:255',
+            'deadline_date'         => 'sometimes|date',
             'classes_ID'            => 'sometimes|numeric',
-            'studing_subjects_ID'   => 'sometimes|numeric',
+            'material_ID'           => 'sometimes|numeric',
         ], [] , [
-            'subject'               => 'اسم المادة',
-            'hw_date'               => 'تاريج الواجب',
+            'notes'                 => 'ملاحظات او وصف للواجب',
+            'deadline_date'         => 'تاريج تسليم الواجب',
             'classes_ID'            => 'اسم الصف',
-            'studing_subjects_ID'   => ' واجب الطالب ',
+            'material_ID'           => ' اسم المادة ',
         ]);
 
-        $homeWork->update($data);
+        $class_homework->update($data);
 
         return redirect()->back()->with('success' ,' ');
     }
@@ -116,9 +117,9 @@ class Home_workController extends Controller
      */
     public function destroy($id)
     {
-        $homeWork = Home_work::findOrfail($id);
-        $homeWork->delete();
+        $class_homework = Class_home_work::findOrfail($id);
+        $class_homework->delete();
         session()->flash('success' , 'تم الحذف بنجاح');
-        return redirect()->route('homeworks.index');
+        return redirect()->route('class_homeworks.index');
     }
 }

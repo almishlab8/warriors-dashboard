@@ -11,27 +11,34 @@
 
 
 
-                    <form action="{{route('studingSubjects.update' , $studingSubject->id)}}" method="POST">
+                    <form action="{{route('class_homeworks.update' , $class_homework->id)}}" method="POST" enctype="multipart/form-data">
                         {{ csrf_field()}}
                         {{ method_field('PUT') }}
                         <div class="from-1">
-                            <h4>تعديل واجب الطالب </h4>
+                            <h4>تعديل واجب </h4>
                             <hr>
                             <br>
                             <div class="form-group row">
-                                <label for="inputEmail3" class="col-sm-2 col-form-label">اسم الواجب</label>
+                                <label for="inputEmail3" class="col-sm-2 col-form-label">المادة</label>
                                 <div class="col-sm-10">
-                                    <input type="text" name="name" class="form-control" id="inputEmail3" value="{{ $studingSubject->name }}" placeholder="ادخال اسم المادة">
+                                    <input type="text" name="notes" class="form-control" id="inputEmail3" value="{{ $class_homework->notes }}" placeholder="ادخال اسم المادة">
                                 </div>
                             </div>
 
+
+                            <div class="form-group row">
+                                <label for="inputEmail3" class="col-sm-2 col-form-label">تاريخ تسليم الواجب</label>
+                                <div class="col-sm-10">
+                                    <input type="datetime" name="deadline_date" class="form-control" id="inputEmail3" value="{{ $class_homework->deadline_date }}" placeholder="تاريخ الواجب">
+                                </div>
+                            </div>
                             <div class="form-group row">
                                 <label for="inputPassword3" class="col-sm-2 col-form-label">الصف</label>
                                 <div class="col-sm-10">
                                     <select class="form-control" name="classes_ID">
                                         @foreach($classes as $class)
                                             <option value="{{$class->id}}"
-                                            @if($studingSubject->classes_ID == $class->id)
+                                            @if($class_homework->classes_ID == $class->id)
                                             selected
                                             @endif>{{$class->class_name}}</option>
                                         @endforeach
@@ -40,18 +47,20 @@
                             </div>
 
                             <div class="form-group row">
-                                <label for="inputPassword3" class="col-sm-2 col-form-label">الصف</label>
+                                <label for="inputPassword3" class="col-sm-2 col-form-label">المادة</label>
                                 <div class="col-sm-10">
-                                    <select class="form-control" name="classes_ID">
-                                        @foreach($teachers as $teacher)
-                                            <option value="{{$class->id}}"
-                                            @if($studingSubject->teachers_id == $teacher->id)
+                                    <select class="form-control" name="material_ID">
+                                        @foreach($materials as $material)
+                                            <option value="{{$material->id}}"
+                                            @if($class_homework->material_ID == $material->id)
                                             selected
-                                            @endif>{{$teacher->name}}</option>
+                                            @endif>{{$material->material_name}}</option>
                                         @endforeach
                                     </select>
                                 </div>
                             </div>
+
+
 
 
                             <div class="form-group row">

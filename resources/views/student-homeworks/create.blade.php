@@ -3,6 +3,10 @@
 @section('content')
 
 
+
+
+
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -13,7 +17,7 @@
 
 
 
-                    <form action="{{route('studingSubjects.store')}}" method="POST">
+                    <form action="{{route('student_homeworks.store')}}" method="POST">
                         {{ csrf_field()}}
 
                         <div class="from-1">
@@ -21,39 +25,39 @@
                             <hr>
                             <br>
                             <div class="form-group row">
-                                <label for="inputEmail3" class="col-sm-2 col-form-label">اسم الواجب</label>
+                                <label for="inputEmail3" class="col-sm-2 col-form-label">ملاحظات للواجب</label>
                                 <div class="col-sm-10">
-                                    <input type="text" name="name" class="form-control" id="inputEmail3" value="{{ old('name') }}" placeholder="ادخال اسم المادة">
+                                    <input type="text" name="notes" class="form-control" id="inputEmail3" value="{{ old('notes') }}" placeholder="ادخال وصف مراد انجازه ">
                                 </div>
                             </div>
 
 
                             <div class="form-group row">
-                                <label for="inputPassword3" class="col-sm-2 col-form-label">الصف</label>
+                                <label for="inputEmail3" class="col-sm-2 col-form-label">تاريخ تسليم الواجب</label>
                                 <div class="col-sm-10">
-                                    <select class="form-control" name="classes_ID">
-                                        @if($classes->count() > 0)
-                                            @foreach ($classes as $class)
-                                                <option value="{{$class->id}}">{{$class->class_name}}</option>
-                                            @endforeach
-                                        @else
-                                            <option value=""> لا يوجد صفوف قم باضافة صف جديد</option>
-                                        @endif
+                                    <input type="date" name="deadline_date" class="form-control" id="inputEmail3" value="{{ old('deadline_date') }}" placeholder="تاريخ الواجب">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="inputPassword3" class="col-sm-2 col-form-label">المواد</label>
+                                <div class="col-sm-10">
+                                    <select class="form-control" name="material_ID">
+                                        <option value="0" disabled="" selected="">اختر المادة</option>
+                                        @foreach ($materials as $material)
+                                            <option value="{{$material->id}}">{{$material->material_name}}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                             </div>
 
                             <div class="form-group row">
-                                <label for="inputPassword3" class="col-sm-2 col-form-label">اسم الاستاذ</label>
+                                <label for="inputPassword3" class="col-sm-2 col-form-label">الطلاب</label>
                                 <div class="col-sm-10">
-                                    <select class="form-control" name="teachers_id">
-                                        @if($teachers->count() > 0)
-                                            @foreach ($teachers as $teacher)
-                                                <option value="{{$teacher->id}}">{{$teacher->name}}</option>
-                                            @endforeach
-                                        @else
-                                            <option value=""> لا يوجد استاذ قم باضافة استاذ جديد </option>
-                                        @endif
+                                    <select class="form-control" name="student_ID">
+                                        <option value="0" disabled="" selected="">اختر الطالب</option>
+                                        @foreach ($students as $student)
+                                            <option value="{{$student->id}}">{{$student->name}}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                             </div>
