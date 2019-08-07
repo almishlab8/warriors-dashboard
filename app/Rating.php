@@ -9,6 +9,12 @@ class Rating extends Model
 
     protected $fillable =
     [
-        'students_id' , 'mark' , 'description'
+        'students_id' , 'mark' , 'description' ,'material_name'
     ];
+
+
+    public function student()
+    {
+        return $this->belongsTo('App\Students');
+    }
 }

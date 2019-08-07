@@ -6,8 +6,8 @@ use Illuminate\Http\Request;
 use App\Students;
 use App\Classes;
 use DB;
-use Auth;
 use App\User;
+use App\Rating;
 use Illuminate\Support\Facades\Storage;
 
 class StudentsContrroller extends Controller
@@ -165,12 +165,20 @@ class StudentsContrroller extends Controller
     }
     public function destroy($id)
     {
-        $students = Students::find($id);
-        $user = User::find($students->USERS_ID);
+        $students = Students::findOrFail($id);
+        $user = User::findOrFail($students->USERS_ID);
 
+        $rating  = Rating::get();
+        //Delete Uers
         $user->delete();
         $students->delete();
 
+       //Delete Users & Rating
+        foreach($rating as $ratin){
+        if ($ratin->students_id == $students->USERS_ID) {
+            $ratin->delete();
+        }
+    }
         return redirect()->back()->with('delete' ,'  ');
     }
 
