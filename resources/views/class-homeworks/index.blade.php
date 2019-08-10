@@ -11,7 +11,7 @@
 </div>
 @if (count($class_homeworks->all()) > 0)
 <div class="table-responsive text-nowrap">
-<table class="table table-striped w-auto " style="width:auto;font-size: 12px;">
+<table class="table table-striped w-auto " >
     <thead >
       <tr>
         <th>الصفوف</th>
@@ -42,7 +42,7 @@
         </td>
       <script>
               function confirmDelete() {
-                  var result = confirm('هل انت متأكد من حذف معلومات الاستاذ ؟');
+                  var result = confirm('هل انت متأكد من حذف معلومات الواجب ؟');
 
                   if (result) {
                           return true;

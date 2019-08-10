@@ -140,19 +140,19 @@
             </li>
             <li class=" nav-item">
                 <a href="#">
-                    <i class="icon-home"></i>
+                    <i class="icon-pen"></i>
                     <span data-i18n="nav.project.main" class="menu-title">الواجبات
                     </span>
                 </a>
                 <ul class="menu-content">
                     <li>
                     <a href="{{route('class_homeworks.index')}}" data-i18n="nav.dash.main" class="menu-item">
-                                <i class="icon-cast"></i> واجبات الصفوف
+                                <i class="icon-pen"></i> واجبات الصفوف
                             </a>
                         <a
                         href="{{route('student_homeworks.index')}}"
                             data-i18n="nav.invoice.invoice_template"
-                            class="menu-item"> <i class="icon-cast"></i> واجبات الطلاب
+                            class="menu-item"> <i class="icon-pen"></i> واجبات الطلاب
                         </a>
                     </li>
                 </ul>

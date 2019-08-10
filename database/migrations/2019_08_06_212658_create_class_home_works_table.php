@@ -16,7 +16,7 @@ class CreateClassHomeWorksTable extends Migration
         Schema::create('class_home_works', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('notes');
-            $table->dateTime('deadline_date');
+            $table->date('deadline_date');
             $table->integer('material_ID');
             $table->integer('classes_ID');
             $table->timestamps();
