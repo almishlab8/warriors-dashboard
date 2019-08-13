@@ -33,8 +33,14 @@ Route::get('/', 'HomeController@index');
 Route::get('/home', 'HomeController@index');
 
 
-//Teachers Controller
+//Teachers Controller By Ahmed Al-Rayan
 Route::resource('teachers' , 'TeachersController');
+
+//Studing_subjects Controller By Ahmed Al-Rayan
+Route::resource('studingSubjects' , 'Studing_subjectsController');
+
+//Home_work Controller By Ahmed Al-Rayan
+Route::resource('homeworks' , 'Home_workController');
 });
 
 
@@ -63,8 +69,16 @@ Route::get('classes/destroy/{id}', 'ClassesContrroller@destroy')->name('classes.
 Route::get('classes/addclass/', 'ClassesContrroller@create')->name('classes.addclass');
 Route::post('classes/store', 'ClassesContrroller@store')->name('classes.store');
 
+//students_evaluated Controller By Karar
+Route::resource('students_evaluated', 'RatingContrroller');
+
+//Materials By Alaa H. Shareef
+Route::resource('materials', 'MaterialController');
+//Gallery By Alaa H. Shareef
+Route::resource('image_gallery', 'Gallery_imagesController');
+Route::resource('videos', 'VideoController');
+
 
 // News & Tables by Hassan
 Route::resource('news', 'NewsController');
 Route::resource('tables', 'TableController');
-

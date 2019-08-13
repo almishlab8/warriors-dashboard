@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateRatingsTable extends Migration
+class CreateMaterialsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,10 @@ class CreateRatingsTable extends Migration
      */
     public function up()
     {
-        Schema::create('ratings', function (Blueprint $table) {
+        Schema::create('materials', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('mark');
-            $table->string('description' ,  45);
-            $table->integer('students_id');
-            $table->string('material_name');
+            $table->string('material_name' , 191);
+            $table->string('class_name' , 191);
             $table->timestamps();
         });
     }
@@ -30,6 +28,6 @@ class CreateRatingsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ratings');
+        Schema::dropIfExists('materials');
     }
 }

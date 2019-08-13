@@ -3,8 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Video;
-class VideoController extends Controller
+use App\Material;
+use App\Classes;
+use DB;
+use Auth;
+use App\User;
+use Illuminate\Support\Facades\Storage;
+
+class MaterialController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,10 +19,10 @@ class VideoController extends Controller
      */
     public function index()
     {
-        $videos = Video::paginate(10);
+        $materials = Material::paginate(10);
         $vars = compact(array_keys(get_defined_vars()));
     
-        return view('videos.index', $vars);
+        return view('materials.index', $vars);
     }
 
     /**
@@ -26,7 +32,10 @@ class VideoController extends Controller
      */
     public function create()
     {
-        return view('videos.create');
+        $classes = Classes::all();
+        $vars = compact(array_keys(get_defined_vars()));
+    
+        return view('materials.create', $vars);
     }
 
     /**
@@ -38,12 +47,12 @@ class VideoController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
-            'video_title' => 'required|string|max:191',
-            'video_url' => 'required|string|max:191',
+            'material_name' => 'required|string|max:191',
+            'class_name' => 'required|string|max:191',
         ]);
-        $video = Video::create([
-            'video_title' => $request->video_title,
-            'video_url' => $request->video_url,
+        $material = Material::create([
+            'material_name' => $request->material_name,
+            'class_name' => $request->class_name,
         ]);
         
         return redirect()->back()->with('success' ,'تم الحفظ بنجاح');
@@ -68,11 +77,12 @@ class VideoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {
-        $video = Video::find($id);
+    { 
+        $classes = Classes::all();
+        $material = Material::find($id);
         $vars = compact(array_keys(get_defined_vars()));
     
-        return view('videos.edit', $vars);
+        return view('materials.edit', $vars);
     
     }
 
@@ -85,16 +95,16 @@ class VideoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $video = Video::find($id);
+        $material = Material::find($id);
         $this->validate($request,[
-            'video_title' => 'required|string|max:191',
-            'video_url' => 'required|string|max:191',
+            'material_name' => 'required|string|max:191',
+            'class_name' => 'required|string|max:191',
         ]);
-        $video->video_title = $request->video_title;
-        $video->video_url = $request->video_url;
+        $material->material_name = $request->material_name;
+        $material->class_name = $request->class_name;
 
-        $video->save();
-        return redirect()->route('videos.index')->with('success' ,'تم التعديل بنجاح');
+        $material->save();
+        return redirect()->route('materials.index')->with('success' ,'تم التعديل بنجاح');
 
     }
 
@@ -106,9 +116,9 @@ class VideoController extends Controller
      */
     public function destroy($id)
     {
-        $video = Video::find($id);
+        $material = Material::find($id);
 
-        $video->delete();
+        $material->delete();
 
         return redirect()->back()->with('delete' ,'  ');
     }
