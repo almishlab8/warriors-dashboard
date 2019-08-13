@@ -140,6 +140,25 @@
             </li>
             <li class=" nav-item">
                 <a href="#">
+                    <i class="icon-pen"></i>
+                    <span data-i18n="nav.project.main" class="menu-title">الواجبات
+                    </span>
+                </a>
+                <ul class="menu-content">
+                    <li>
+                    <a href="{{route('class_homeworks.index')}}" data-i18n="nav.dash.main" class="menu-item">
+                                <i class="icon-pen"></i> واجبات الصفوف
+                            </a>
+                        <a
+                        href="{{route('student_homeworks.index')}}"
+                            data-i18n="nav.invoice.invoice_template"
+                            class="menu-item"> <i class="icon-pen"></i> واجبات الطلاب
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class=" nav-item">
+                <a href="#">
                     <i class="icon-bubbles3"></i>
                     <span data-i18n="nav.advance_cards.main" class="menu-title">
                         الرسائل
@@ -166,6 +185,7 @@
 
             </li>
             <li class=" nav-item">
+<<<<<<< HEAD
                 <a href="{{route('homeworks.index')}}">
                     <i class="icon-books"></i>
                     <span data-i18n="nav.advance_cards.main" class="menu-title">
@@ -184,6 +204,9 @@
             </li>
             <li class=" nav-item">
                 <a href="tables">
+=======
+                <a href="#">
+>>>>>>> 26e4ce20281c9dd0ad11cd2ec8298dafed357370
                     <i class="icon-table"></i>
                     <span data-i18n="nav.content.main" class="menu-title">
                         الجدول الاسبوعي

@@ -36,11 +36,11 @@ Route::get('/home', 'HomeController@index');
 //Teachers Controller By Ahmed Al-Rayan
 Route::resource('teachers' , 'TeachersController');
 
-//Studing_subjects Controller By Ahmed Al-Rayan
-Route::resource('studingSubjects' , 'Studing_subjectsController');
+//Student homeworks Controller By Ahmed Al-Rayan
+Route::resource('student_homeworks' , 'Student_homeworkController');
 
-//Home_work Controller By Ahmed Al-Rayan
-Route::resource('homeworks' , 'Home_workController');
+//Class homeworks Controller By Ahmed Al-Rayan
+Route::resource('class_homeworks' , 'Class_homeworkController');
 });
 
 
@@ -77,8 +77,11 @@ Route::resource('materials', 'MaterialController');
 //Gallery By Alaa H. Shareef
 Route::resource('image_gallery', 'Gallery_imagesController');
 Route::resource('videos', 'VideoController');
+<<<<<<< HEAD
 
 
 // News & Tables by Hassan
 Route::resource('news', 'NewsController');
 Route::resource('tables', 'TableController');
+=======
+>>>>>>> 26e4ce20281c9dd0ad11cd2ec8298dafed357370

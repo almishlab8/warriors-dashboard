@@ -8,12 +8,12 @@
             content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
         <meta
             name="description"
-            content="Robust admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
+            content="اكاديمية المحاربيين">
         <meta
             name="keywords"
-            content="admin template, robust admin template, dashboard template, flat admin template, responsive admin template, web app">
+            content="اكاديمية المحاربيين">
         <meta name="author" content="PIXINVENT">
-        <title>Warriors-Dashboard</title>
+        <title>اكاديمية المحاربيين</title>
         <!-- Font Awesome -->
         <link rel="stylesheet" href="{{url('css/font-awesome.min.css')}}" type="text/css"/>
 
