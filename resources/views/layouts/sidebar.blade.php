@@ -203,7 +203,7 @@
                 </a>
             </li>
             <li class=" nav-item">
-                <a href="tables">
+                <a href="{{ route('tables.index') }}">
 =======
                 <a href="#">
 >>>>>>> 26e4ce20281c9dd0ad11cd2ec8298dafed357370
