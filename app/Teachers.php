@@ -19,10 +19,11 @@ class Teachers extends Model
         'USER_ID',
     ];
 
+
 //Link the Teachers table and alerts
- public function alerts()
+ public function alert()
  {
-  return $this->hasMany('App\Alerts');
+  return $this->hasOne('App\Alert','teachers_id');
  }
 
  //Link the Teachers table and Studing_subjects

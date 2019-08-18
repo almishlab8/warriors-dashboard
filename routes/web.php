@@ -74,14 +74,13 @@ Route::resource('students_evaluated', 'RatingContrroller');
 
 //Materials By Alaa H. Shareef
 Route::resource('materials', 'MaterialController');
+//Materials By Alaa H. Shareef
+Route::resource('alerts', 'AlertsContrroller');
 //Gallery By Alaa H. Shareef
 Route::resource('image_gallery', 'Gallery_imagesController');
 Route::resource('videos', 'VideoController');
-<<<<<<< HEAD
 
 
 // News & Tables by Hassan
 Route::resource('news', 'NewsController');
 Route::resource('tables', 'TableController');
-=======
->>>>>>> 26e4ce20281c9dd0ad11cd2ec8298dafed357370

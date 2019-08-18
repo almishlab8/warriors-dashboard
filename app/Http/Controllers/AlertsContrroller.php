@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Alert;
+use App\Students;
+use App\Teachers;
 
 class AlertsContrroller extends Controller
 {
@@ -13,7 +16,10 @@ class AlertsContrroller extends Controller
      */
     public function index()
     {
-        //
+        $alerts = Alert::paginate(10);
+        $vars = compact(array_keys(get_defined_vars()));
+    
+        return view('alerts.index', $vars);
     }
 
     /**
@@ -23,7 +29,11 @@ class AlertsContrroller extends Controller
      */
     public function create()
     {
-        //
+
+        $teachers = Teachers::all();
+        $students = Students::all();
+        $vars = compact(array_keys(get_defined_vars()));
+        return view('alerts.create', $vars);
     }
 
     /**
@@ -34,8 +44,29 @@ class AlertsContrroller extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+   
+        $data = $this->validate($request , [
+          'title'                  => 'required|string',
+          'teachers_id'                       => '',
+          'students_id'                       => '',
+          'for_all'                       => '',
+          'classes_ID'                       => '',
+     
+          ] ,  [
+            'title.required'       => 'التبليغ مطلوب',
+      
+    
+        ]);
+    
+   
+      if ($request->teachers_id == null) {$data['teachers_id'] = 0;};
+      if ($request->students_id == null) {$data['students_id'] = 0;};
+
+      if ($request->type == 0) {$data['for_all']  = 1;}else{$data['for_all']  = 0;};
+      Alert::create($data);
+    
+      return redirect()->back()->with('success' ,'تم الحفظ بنجاح');
+      }
 
     /**
      * Display the specified resource.
@@ -79,6 +110,10 @@ class AlertsContrroller extends Controller
      */
     public function destroy($id)
     {
-        //
+        $alert = Alert::find($id);
+
+        $alert->delete();
+
+        return redirect()->back()->with('delete' ,'  ');
     }
 }

@@ -176,7 +176,7 @@
 
             </li>
             <li class=" nav-item">
-                <a href="#">
+                <a href="{{route('alerts.index')}}">
                     <i class="icon-bullhorn"></i>
                     <span data-i18n="nav.advance_cards.main" class="menu-title">
                         التبليغات
@@ -185,28 +185,7 @@
 
             </li>
             <li class=" nav-item">
-<<<<<<< HEAD
-                <a href="{{route('homeworks.index')}}">
-                    <i class="icon-books"></i>
-                    <span data-i18n="nav.advance_cards.main" class="menu-title">
-                        الواجبات
-                    </span>
-                </a>
-            </li>
-
-            <li class=" nav-item">
-                <a href="{{route('studingSubjects.index')}}">
-                    <i class="icon-books"></i>
-                    <span data-i18n="nav.advance_cards.main" class="menu-title">
-                        واجبات الطالب
-                    </span>
-                </a>
-            </li>
-            <li class=" nav-item">
-                <a href="{{ route('tables.index') }}">
-=======
-                <a href="#">
->>>>>>> 26e4ce20281c9dd0ad11cd2ec8298dafed357370
+                <a href="{{route('tables.index')}}">
                     <i class="icon-table"></i>
                     <span data-i18n="nav.content.main" class="menu-title">
                         الجدول الاسبوعي

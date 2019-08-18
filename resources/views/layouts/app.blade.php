@@ -157,7 +157,8 @@ rel="stylesheet"  type="text/css" href="files/media/css/dataTables.bootstrap4.cs
                 </span>
             </p>
         </footer>
-
+        <script src="{{asset('js\jquery.min.js')}}"></script>
+        <script src="{{asset('js\type.js')}}"></script>
     <!-- BEGIN VENDOR JS-->
     <script
         src="{{asset('/files/app-assets/js/core/libraries/jquery.min.js')}}"
