@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+<<<<<<< HEAD
 use App\Students;
 use App\Attendees;
 class AttendeesContrroller extends Controller
@@ -13,6 +14,11 @@ class AttendeesContrroller extends Controller
         $this->middleware('auth');
     }
 
+=======
+
+class AttendeesContrroller extends Controller
+{
+>>>>>>> 8d9ec8ba7c2c9b69eac32a358538dc7914468874
     /**
      * Display a listing of the resource.
      *
@@ -20,6 +26,7 @@ class AttendeesContrroller extends Controller
      */
     public function index()
     {
+<<<<<<< HEAD
         $month = date('m');
         $day = date('d');
         $year = date('Y');
@@ -29,6 +36,9 @@ class AttendeesContrroller extends Controller
         return view('attendance.index' , [
             'date' =>$today
         ]);
+=======
+        //
+>>>>>>> 8d9ec8ba7c2c9b69eac32a358538dc7914468874
     }
 
     /**
@@ -38,11 +48,15 @@ class AttendeesContrroller extends Controller
      */
     public function create()
     {
+<<<<<<< HEAD
         $student = Students::all();
           return view('attendance.create',
         [
             'student' => $student
         ]);
+=======
+        //
+>>>>>>> 8d9ec8ba7c2c9b69eac32a358538dc7914468874
     }
 
     /**
@@ -53,6 +67,7 @@ class AttendeesContrroller extends Controller
      */
     public function store(Request $request)
     {
+<<<<<<< HEAD
         $item = array();
         foreach( $request->all() as $value){
             $item =$value;
@@ -74,6 +89,9 @@ class AttendeesContrroller extends Controller
           }
 
           return redirect()->back()->with('success' , 'تم الاضافة بنجاح ');
+=======
+        //
+>>>>>>> 8d9ec8ba7c2c9b69eac32a358538dc7914468874
     }
 
     /**
@@ -82,6 +100,7 @@ class AttendeesContrroller extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+<<<<<<< HEAD
     public function show($date)
     {
         $student = Students::all();
@@ -92,6 +111,11 @@ class AttendeesContrroller extends Controller
             'student' => $student
       ]);
 
+=======
+    public function show($id)
+    {
+        //
+>>>>>>> 8d9ec8ba7c2c9b69eac32a358538dc7914468874
     }
 
     /**
@@ -123,6 +147,7 @@ class AttendeesContrroller extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+<<<<<<< HEAD
     public function destroy($date)
     {
         $studingSubject = Attendees::findOrfail($date);
@@ -136,5 +161,10 @@ class AttendeesContrroller extends Controller
        'attendance' => $attendance,
        'date' =>$request->input('date')
        ]);
+=======
+    public function destroy($id)
+    {
+        //
+>>>>>>> 8d9ec8ba7c2c9b69eac32a358538dc7914468874
     }
 }

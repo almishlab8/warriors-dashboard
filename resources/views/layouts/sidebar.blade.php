@@ -211,7 +211,11 @@
                 </ul>
             </li>
             <li class=" nav-item">
+<<<<<<< HEAD
                 <a href="{{ route('attendance.index')}}">
+=======
+                <a href="#">
+>>>>>>> 8d9ec8ba7c2c9b69eac32a358538dc7914468874
                     <i class="icon-user-check"></i>
                     <span data-i18n="nav.components.main" class="menu-title">الحظور والغياب
                     </span>
