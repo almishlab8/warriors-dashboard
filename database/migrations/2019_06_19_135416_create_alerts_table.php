@@ -15,8 +15,7 @@ class CreateAlertsTable extends Migration
     {
         Schema::create('alerts', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('title' , 45);
-            $table->integer('classes_ID');
+            $table->text('title' );
             $table->integer('teachers_id');
             $table->integer('students_id');
             $table->boolean('for_all');

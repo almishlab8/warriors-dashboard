@@ -21,9 +21,9 @@ class Students extends Model
     }
  //Link the Students table and alerts
 
- public function alerts()
+ public function alert()
  {
-  return $this->hasMany('App\Alerts');
+  return $this->hasOne('App\Alert','students_id');
  }
 
 

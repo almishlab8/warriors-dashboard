@@ -176,7 +176,7 @@
 
             </li>
             <li class=" nav-item">
-                <a href="#">
+                <a href="{{route('alerts.index')}}">
                     <i class="icon-bullhorn"></i>
                     <span data-i18n="nav.advance_cards.main" class="menu-title">
                         التبليغات
@@ -185,6 +185,7 @@
 
             </li>
             <li class=" nav-item">
+<<<<<<< HEAD
                 {{-- <a href="{{route('homeworks.index')}}"> --}}
                     <i class="icon-books"></i>
                     <span data-i18n="nav.advance_cards.main" class="menu-title">
@@ -204,6 +205,9 @@
             <li class=" nav-item">
                 <a href="{{ route('tables.index') }}">
                 
+=======
+                <a href="{{route('tables.index')}}">
+>>>>>>> 688470a214532da177915129e8c0dcf8b88f8d6a
                     <i class="icon-table"></i>
                     <span data-i18n="nav.content.main" class="menu-title">
                         الجدول الاسبوعي
@@ -229,7 +233,11 @@
                 </ul>
             </li>
             <li class=" nav-item">
+<<<<<<< HEAD
+                <a href="{{ route('attendance.index')}}">
+=======
                 <a href="#">
+>>>>>>> 8d9ec8ba7c2c9b69eac32a358538dc7914468874
                     <i class="icon-user-check"></i>
                     <span data-i18n="nav.components.main" class="menu-title">الحظور والغياب
                     </span>
