@@ -17,6 +17,7 @@ class Teachers extends Model
         'teacher_documents',
         'teacher_certificate',
         'USER_ID',
+        
     ];
 
 //Link the Teachers table and alerts

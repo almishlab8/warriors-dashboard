@@ -77,11 +77,19 @@ Route::resource('materials', 'MaterialController');
 //Gallery By Alaa H. Shareef
 Route::resource('image_gallery', 'Gallery_imagesController');
 Route::resource('videos', 'VideoController');
-<<<<<<< HEAD
+
 
 
 // News & Tables by Hassan
 Route::resource('news', 'NewsController');
 Route::resource('tables', 'TableController');
-=======
->>>>>>> 26e4ce20281c9dd0ad11cd2ec8298dafed357370
+
+
+
+// Route::get('getsubject', 'TableController@index');
+
+// Route::post('getsubject/fetch', 'TableController@fetch')->name('getsubject.fetch');
+
+
+// Route::get('dropdownlist','TableController@getCountries');
+Route::get('dropdownlist/getstates/{id}','TableController@getStates');

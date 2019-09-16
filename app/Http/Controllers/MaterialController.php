@@ -21,8 +21,8 @@ class MaterialController extends Controller
     {
         $materials = Material::paginate(10);
         $vars = compact(array_keys(get_defined_vars()));
-    
-        return view('materials.index', $vars);
+        $materialss = Material::all();
+        return view('materials.index', $vars)->with(['materialss' => $materialss]);
     }
 
     /**
@@ -34,8 +34,8 @@ class MaterialController extends Controller
     {
         $classes = Classes::all();
         $vars = compact(array_keys(get_defined_vars()));
-    
-        return view('materials.create', $vars);
+        $materials = Material::all();
+        return view('materials.create', $vars)->with(['materials' => $materials]);
     }
 
     /**
@@ -46,15 +46,32 @@ class MaterialController extends Controller
      */
     public function store(Request $request)
     {
+        //dd(json_encode($request->material_name,JSON_UNESCAPED_UNICODE));
         $this->validate($request,[
-            'material_name' => 'required|string|max:191',
-            'class_name' => 'required|string|max:191',
+            'material_name' => 'required|max:255',
+            'class_id'      => 'required',
         ]);
-        $material = Material::create([
-            'material_name' => $request->material_name,
-            'class_name' => $request->class_name,
-        ]);
+        // json_encode($request->material_name)
+        // JSON_UNESCAPED_UNICODE
+        // JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES
+        // unserialize
+        // serialize
+        //$inputs = $request->all();
+        //$array = $inputs['material_name'];
+        //dd(serialize($array,JSON_UNESCAPED_UNICODE));
+        /////dd(serialize($array));
+        //$serializedArr = unserialize($array);
         
+        // $test = Material::create([
+        //     'material_name' => json_encode($request->material_name, JSON_UNESCAPED_UNICODE),
+        //     'class_id'      => $request->class_id,
+        // ]);
+        $test = Material::create([
+            'material_name' => $request->material_name,
+            'class_id'      => $request->class_id,
+        ]);
+       // dd($test);
+              
         return redirect()->back()->with('success' ,'تم الحفظ بنجاح');
 
     }
@@ -80,9 +97,10 @@ class MaterialController extends Controller
     { 
         $classes = Classes::all();
         $material = Material::find($id);
-        $vars = compact(array_keys(get_defined_vars()));
-    
-        return view('materials.edit', $vars);
+        //$vars = compact(array_keys(get_defined_vars()));
+        // $materials = Material::all();
+        //dd($material);
+        return view('materials.edit', compact('classes','material'));
     
     }
 
@@ -97,13 +115,17 @@ class MaterialController extends Controller
     {
         $material = Material::find($id);
         $this->validate($request,[
-            'material_name' => 'required|string|max:191',
-            'class_name' => 'required|string|max:191',
+            'material_name' => 'required',
+            'class_id'      => 'required',
         ]);
-        $material->material_name = $request->material_name;
-        $material->class_name = $request->class_name;
-
-        $material->save();
+        
+        $material->update([
+            // $material->material_name = json_encode($request->material_name);
+            // $material->class_id = $request->class_id;
+            'material_name' => json_encode($request->material_name, JSON_UNESCAPED_UNICODE),
+            'class_id'      => $request->class_id,
+        ]);
+        
         return redirect()->route('materials.index')->with('success' ,'تم التعديل بنجاح');
 
     }

@@ -15,13 +15,13 @@ class CreateTablesTable extends Migration
     {
         Schema::create('tables', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('class_name')->nullable(); // أسم الصف
-            $table->string('days')->nullable(); ///unique// الأيام
-            $table->string('lesson')->nullable(); // الدرس
-            $table->string('material_name')->nullable(); // نوع المادة
-            $table->string('name')->nullable(); // اسم المدرس
-            $table->string('time_from')->nullable(); // من كذا وقت
-            $table->string('time_to')->nullable(); // الى كذا وقت
+            $table->integer('class_id_table');       // أسم الصف
+            $table->integer('material_id_table');    // نوع المادة
+            $table->integer('teacher_id');             // اسم المدرس
+            $table->integer('day_id');             // اسم المدرس
+            $table->integer('lesson_id');             // اسم المدرس
+            $table->time('time_from');            // من كذا وقت
+            $table->time('time_to');           // الى كذا وقت
             $table->timestamps();
         });
     }

@@ -22,11 +22,17 @@
       </tr>
     </thead>
     <tbody>
-        @foreach ($materials as $material)
+        @foreach ($materialss as $material)
         <tr>
-        <td>{{$material->material_name}}</td>
-        <td>{{$material->class_name}}</td>
-
+          <td>
+            {{-- @foreach (json_decode($material->material_name) as $item)
+              <span>{{$item}}</span> |
+            @endforeach --}}
+            {{$material->material_name}}
+        </td>
+          <td>{{$material->class->class_name}}</td>
+          
+          {{-- <td>{{str_replace(['"','[',']',','],' ',$material->material_name)}}</td> --}}
 
         <td>
             <a  href="/materials/{{$material->id}}/edit" class="btn  btn-primary">تعديل</a>

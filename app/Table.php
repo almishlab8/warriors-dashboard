@@ -6,7 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Table extends Model
 {
-    protected $fillable = [
-        'class_name', 'days', 'lesson', 'material_name', 'name', 'time_from', 'time_to'
-    ];
+    protected $guarded = [];
+
+    public function teacher()
+	{
+		return $this->belongsTo(User::class, 'teacher_id');
+    }
+    public function material()
+	{
+		return $this->belongsTo(Material::class, 'material_id_table');
+    }
 }

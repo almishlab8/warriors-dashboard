@@ -17,11 +17,14 @@
         <!-- Font Awesome -->
         <link rel="stylesheet" href="{{url('css/font-awesome.min.css')}}" type="text/css"/>
 
-        <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/droid-arabic-kufi" type="text/css"/>
+        {{-- <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/droid-arabic-kufi" type="text/css"/> --}}
+        <link href="https://fonts.googleapis.com/css?family=Cairo&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="{{url('css/frontend.css')}}" type="text/css"/>
         <link rel="stylesheet" href="{{url('css/students.css')}}" type="text/css"/>
         <link rel="stylesheet" href="{{asset('https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css')}}">
         <script src="{{asset('https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js')}}"></script>
+
+     
         <link
             rel="apple-touch-icon"
             sizes="60x60"
@@ -100,10 +103,16 @@ rel="stylesheet"  type="text/css" href="files/media/css/dataTables.bootstrap4.cs
             rel="stylesheet"
             type="text/css"
             href="{{asset('/files/assets/css/style-rtl.css')}}">
+
+   {{-- By Hassan Libary Select Multi Option CSS--}}
+   <link href="{{ asset('css/select2.min.css') }}" rel="stylesheet">
+   {{-- /By Hassan --}}            
             <style>
+
                 *{
 
-                        font-family: 'DroidArabicKufiRegular';
+                        /* font-family: 'DroidArabicKufiRegular'; */
+                        font-family: 'Cairo', sans-serif;
                         font-weight: normal;
                         font-style: normal;
 
@@ -215,7 +224,18 @@ rel="stylesheet"  type="text/css" href="files/media/css/dataTables.bootstrap4.cs
             $('#dataTable').DataTable();
         </script>
 
-        <script src="{{url('js/frontend.js')}}"></script>
+        {{-- <script src="{{url('js/frontend.js')}}"></script> --}}
     <!-- END PAGE LEVEL JS-->
+
+    {{-- By Hassan Libary Select Multi Option --}}
+    <script src="{{ asset('js/select2.min.js') }}"></script>
+        <script>
+            $(".js-example-tokenizer").select2({
+                tags: true
+            });
+        </script>
+    {{-- /By Hassan --}}
+
+    @stack('js')
 </body>
 </html>
