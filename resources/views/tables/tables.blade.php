@@ -55,18 +55,18 @@
       <label for="">الصفوف:</label>
             <div class="form-group">
                 <select name="class_id_table" class="form-control" required>
-                    <option value=""> اختر صف </option>
-                    @foreach ($countries as $key => $value)
+                    <option value="" > اختر صف </option>
+                    {{-- @foreach ($countries as $key => $value)
                     <option value="{{ $key }}">{{ $value }}</option>
-                    @endforeach
+                    @endforeach --}}
+                    <option value="1">الاول</option>
+                    <option value="2">الثاني</option>
+                    <option value="3">الثالث</option>
+                    <option value="4">الرابع</option>
+                    <option value="5">الخامس</option>
+                    <option value="6">السادس</option>
                 </select>
 
-                {{-- <select class="custom-select form-control" name="class_id_table" required>
-                  <option  value="">اختر واحده</option>
-                  @foreach ($classes as $classe)
-                    <option value="{{$classe->id}}">{{$classe->class_name}}</option>
-                  @endforeach
-                </select> --}}
             </div>
     </div>
 {{-- End Classes --}}
@@ -79,16 +79,7 @@
           <select name="material_id_table" class="form-control" required>
             <option>اختر المادة</option>
           </select>
-    {{-- <select class="custom-select form-control" name="material_id_table" required>
-        <option value="">المواد الدراسية</option>
-            @foreach ($material as $item)
-              <option value="{{$item->id}}">
-           @if ($item->class_id == 1)
-           <strong> الصف {{$item->class->class_name}}</strong>  :  {{$item->material_name}} 
-           @endif
-              </option>
-            @endforeach
-      </select> --}}
+
     </div>
 </div>
 {{-- End Materals --}}
@@ -211,27 +202,7 @@
       <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
         <div class="card-body">
 {{-- Start Table --}}
-          <table class="table table-hover">
-            <thead>
-              <tr>
-                <th scope="col">اليوم</th>
-                <th scope="col">1</th>
-                <th scope="col">2</th>
-                <th scope="col">3</th>
-                <th scope="col">4</th>
-                <th scope="col">5</th>
-                <th scope="col">6</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-            </tbody>
-          </table>
+@include('tables.two')
 {{-- End Table --}}
         </div>
       </div>
@@ -249,27 +220,7 @@
       <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
         <div class="card-body">
 {{-- Start Table --}}
-          <table class="table table-hover">
-            <thead>
-              <tr>
-                <th scope="col">اليوم</th>
-                <th scope="col">1</th>
-                <th scope="col">2</th>
-                <th scope="col">3</th>
-                <th scope="col">4</th>
-                <th scope="col">5</th>
-                <th scope="col">6</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-            </tbody>
-          </table>
+@include('tables.three')
 {{-- End Table --}}
         </div>
       </div>
@@ -279,7 +230,7 @@
     <div class="card mb-0">
       <div class="card-header" id="headingFour">
         <h2 class="mb-0">
-          <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseThree">
+          <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
              الرابع
           </button>
         </h2>
@@ -287,27 +238,7 @@
       <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
         <div class="card-body">
 {{-- Start Table --}}
-          <table class="table table-hover">
-            <thead>
-              <tr>
-                <th scope="col">اليوم</th>
-                <th scope="col">1</th>
-                <th scope="col">2</th>
-                <th scope="col">3</th>
-                <th scope="col">4</th>
-                <th scope="col">5</th>
-                <th scope="col">6</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-            </tbody>
-          </table>
+@include('tables.four')
 {{-- End Table --}}
         </div>
       </div>
@@ -317,7 +248,7 @@
     <div class="card mb-0">
       <div class="card-header" id="headingFive">
         <h2 class="mb-0">
-          <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseThree">
+          <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
              الخامس
           </button>
         </h2>
@@ -325,27 +256,7 @@
       <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
         <div class="card-body">
 {{-- Start Table --}}
-          <table class="table table-hover">
-            <thead>
-              <tr>
-                <th scope="col">اليوم</th>
-                <th scope="col">1</th>
-                <th scope="col">2</th>
-                <th scope="col">3</th>
-                <th scope="col">4</th>
-                <th scope="col">5</th>
-                <th scope="col">6</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-            </tbody>
-          </table>
+@include('tables.five')
 {{-- End Table --}}
         </div>
       </div>
@@ -355,7 +266,7 @@
     <div class="card mb-0">
       <div class="card-header" id="headingSix">
         <h2 class="mb-0">
-          <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseThree">
+          <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
              السادس
           </button>
         </h2>
@@ -363,27 +274,7 @@
       <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordionExample">
         <div class="card-body">
 {{-- Start Table --}}
-          <table class="table table-hover">
-            <thead>
-              <tr>
-                <th scope="col">اليوم</th>
-                <th scope="col">1</th>
-                <th scope="col">2</th>
-                <th scope="col">3</th>
-                <th scope="col">4</th>
-                <th scope="col">5</th>
-                <th scope="col">6</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-            </tbody>
-          </table>
+@include('tables.six')
 {{-- End Table --}}
         </div>
       </div>

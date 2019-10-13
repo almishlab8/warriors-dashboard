@@ -18,7 +18,7 @@
         <link rel="stylesheet" href="{{url('css/font-awesome.min.css')}}" type="text/css"/>
 
         {{-- <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/droid-arabic-kufi" type="text/css"/> --}}
-        <link href="https://fonts.googleapis.com/css?family=Cairo&display=swap" rel="stylesheet">
+        {{-- <link href="https://fonts.googleapis.com/css?family=Cairo&display=swap" rel="stylesheet"> --}}
         <link rel="stylesheet" href="{{url('css/frontend.css')}}" type="text/css"/>
         <link rel="stylesheet" href="{{url('css/students.css')}}" type="text/css"/>
         <link rel="stylesheet" href="{{asset('https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css')}}">
@@ -236,7 +236,11 @@ rel="stylesheet"  type="text/css" href="files/media/css/dataTables.bootstrap4.cs
             });
         </script>
     {{-- /By Hassan --}}
-
+    <script>
+        
+            // $('.jj').after('<td>2</td>');
+       
+        </script>
     @stack('js')
 </body>
 </html>

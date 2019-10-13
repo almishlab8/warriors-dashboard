@@ -25,18 +25,19 @@ class TableController extends Controller
 
     public function store(Request $request)
     {
-        $this->validate($request,[
-            'class_id_table'            => 'required',
-            'material_id_table'         => 'required',
-            'teacher_id'                => 'required',
-            'day_id'                    => 'required',
-            'lesson_id'                 => 'required',
-            'time_from'                 => 'required',
-            'time_to'                   => 'required'
-        ]);
+        $getLessonIdValue = Table::where('day_id', $request->day_id)
+                           ->where('lesson_id', $request->lesson_id)->value('lesson_id');
+            if ($getLessonIdValue == null) {
+                Table::create($request->all());
+            }elseif ($getLessonIdValue != null){
+                Session::flash('success','تم أضافة هذا الدرس مسبقاً');
+                return redirect()->back();
+            }else {
+                Session::flash('success','تأكد من أدخال البيانات');
+                return redirect()->back();
+            }
 
-         Table::create($request->all());
-         Session::flash('success','تم أضافة البيانات بنجاح');
+         Session::flash('success','تمت أضافة البيانات بنجاح');
          return redirect()->back();
     }
 
@@ -58,8 +59,10 @@ class TableController extends Controller
         
     }
 
-    public function destroy(Table $table)
+    public function destroy($id)
     {
-        //
+        $table = Table::findOrfail($id);
+        $table->delete();
+        return redirect()->back();
     }
 }

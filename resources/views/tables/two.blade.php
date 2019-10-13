@@ -1,4 +1,3 @@
-{{-- {{dd($tables->all())}} --}}
 <table class="table table-hover">
     <thead>
         <tr>
@@ -15,7 +14,7 @@
         <tr>
             <td>السبت</td>
             @foreach ($tables as  $table)
-              @if($table->class_id_table == 1)
+              @if($table->class_id_table == 2)
                 @if ($table->day_id == 1)
                   @if ($table->lesson_id == 1)
                       <td>
@@ -93,7 +92,7 @@
         <tr>
           <th>الأحد</th>
             @foreach ($tables as  $table)
-              @if($table->class_id_table == 1)
+              @if($table->class_id_table == 2)
                 @if ($table->day_id == 2)
                   @if ($table->lesson_id == 1)
                       <td>
@@ -169,7 +168,7 @@
          <tr>
           <th>الأثنين</th>
           @foreach ($tables as  $table)
-          @if($table->class_id_table == 1)
+          @if($table->class_id_table == 2)
             @if ($table->day_id == 3)
               @if ($table->lesson_id == 1)
                   <td>
@@ -245,7 +244,7 @@
         <tr>
           <th>الثلاثاء</th>
           @foreach ($tables as  $table)
-          @if($table->class_id_table == 1)
+          @if($table->class_id_table == 2)
             @if ($table->day_id == 4)
               @if ($table->lesson_id == 1)
                   <td>
@@ -321,7 +320,7 @@
         <tr>
           <th>الأربعاء</th>
           @foreach ($tables as  $table)
-          @if($table->class_id_table == 1)
+          @if($table->class_id_table == 2)
             @if ($table->day_id == 5)
               @if ($table->lesson_id == 1)
                   <td>
@@ -397,7 +396,7 @@
         <tr>
           <th>الخميس</th>
           @foreach ($tables as  $table)
-          @if($table->class_id_table == 1)
+          @if($table->class_id_table == 2)
             @if ($table->day_id == 6)
               @if ($table->lesson_id == 1)
                   <td>

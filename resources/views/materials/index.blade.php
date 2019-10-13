@@ -30,7 +30,7 @@
             @endforeach --}}
             {{$material->material_name}}
         </td>
-          <td>{{$material->class->class_name}}</td>
+          <td>{{$material->class_id}}</td>
           
           {{-- <td>{{str_replace(['"','[',']',','],' ',$material->material_name)}}</td> --}}
 

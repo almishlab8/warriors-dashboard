@@ -9,14 +9,30 @@
             <div class="form-group row">
           <label for="inputEmail3" class="col-sm-2 col-form-label">أسم الصف</label>
           <div class="col-sm-10">
-          <input type="text" name="class_name" value="{{old('class_name')}}" class="form-control" id="inputEmail3" placeholder="أسم الصف">
+          {{-- <input type="text" name="class_name" value="{{old('class_name')}}" class="form-control" id="inputEmail3" placeholder="أسم الصف"> --}}
+          {{-- Start Classes --}}
+              <div class="col-md">
+                      <div class="form-group">
+                          <select name="class_name" class="form-control" required>
+                              <option value=""> اختر صف </option>
+                              <option value="1">الاول</option>
+                              <option value="2">الثاني</option>
+                              <option value="3">الثالث</option>
+                              <option value="4">الرابع</option>
+                              <option value="5">الخامس</option>
+                              <option value="6">السادس</option>
+                          </select>
+
+                      </div>
+              </div>
+          {{-- End Classes --}}
           </div>
         </div>
 
          </div>
         <div class="form-group row">
           <div class="col-sm-10">
-            <button type="submit" class="btn btn-primary">اضاقة</button>
+            <button type="submit" class="btn btn-primary">اضافة</button>
           </div>
         </div>
 

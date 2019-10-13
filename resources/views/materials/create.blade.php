@@ -46,9 +46,16 @@
                                 <div class="col-sm-10">
                                 <select class="form-control" name="class_id">
                                 <option value="0" disabled="" selected="">اختر الصف</option>
-                                    @foreach ($classes as $classe)
+                                    {{-- @foreach ($classes as $classe)
                                      <option value="{{$classe->id}}">{{$classe->class_name}}</option>
-                                    @endforeach
+                                    @endforeach --}}
+                                    <option value="1">الاول</option>
+                                    <option value="2">الثاني</option>
+                                    <option value="3">الثالث</option>
+                                    <option value="4">الرابع</option>
+                                    <option value="5">الخامس</option>
+                                    <option value="6">السادس</option>
+
                                 </select>
                                 </div>
                             </div>

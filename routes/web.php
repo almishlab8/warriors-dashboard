@@ -79,16 +79,13 @@ Route::resource('alerts', 'AlertsContrroller');
 //Gallery By Alaa H. Shareef
 Route::resource('image_gallery', 'Gallery_imagesController');
 Route::resource('videos', 'VideoController');
-<<<<<<< HEAD
 
-=======
->>>>>>> 688470a214532da177915129e8c0dcf8b88f8d6a
 
 
 // News & Tables by Hassan
 Route::resource('news', 'NewsController');
 Route::resource('tables', 'TableController');
-<<<<<<< HEAD
+
 
 
 
@@ -99,8 +96,7 @@ Route::resource('tables', 'TableController');
 
 // Route::get('dropdownlist','TableController@getCountries');
 Route::get('dropdownlist/getstates/{id}','TableController@getStates');
-=======
-<<<<<<< HEAD
+
 
 Route::get('attendance' , 'AttendeesContrroller@index')->name('attendance.index');
 Route::get('attendance\create' , 'AttendeesContrroller@create')->name('attendance.create');
@@ -109,6 +105,4 @@ Route::get('attendance\search' , 'AttendeesContrroller@search')->name('attendanc
 Route::get('attendance\show\{date}' , 'AttendeesContrroller@show')->name('attendance.show');
 Route::get('attendance\delete{date}' , 'AttendeesContrroller@delete')->name('attendance.delete');
 
-=======
->>>>>>> 8d9ec8ba7c2c9b69eac32a358538dc7914468874
->>>>>>> 688470a214532da177915129e8c0dcf8b88f8d6a
+
